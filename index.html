@@ -1,0 +1,735 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="data:image/jpeg;base64,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">
+</head>
+<body>
+<title>أُلفة العائلة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800;900&display=swap">
+<style>
+/* Layout: one phone-sized app column, centered on wide screens, full-bleed on phones. */
+:root{
+  --rose:#C57B88; --rose-strong:#A85E6C; --blush:#FDF1F2; --blush-2:#F8E1E5;
+  --ink:#3A2E30; --muted:#7A6A6D; --bg:#FFFFFF; --page:#F6EEEF; --line:#F3E3E6;
+  --ok:#3C8A5A; --danger:#C0392B; --on-ink:#FFFFFF;
+  --font:"Cairo","Tahoma","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --rose:#E59AA7; --rose-strong:#F0B3BE; --blush:#2E2326; --blush-2:#3A2B2F;
+  --ink:#F5E9EB; --muted:#BBA8AC; --bg:#1E1719; --page:#141012; --line:#3A2B2F;
+  --ok:#7CCB98; --danger:#F08A7E; --on-ink:#1E1719; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --rose:#E59AA7; --rose-strong:#F0B3BE; --blush:#2E2326; --blush-2:#3A2B2F;
+  --ink:#F5E9EB; --muted:#BBA8AC; --bg:#1E1719; --page:#141012; --line:#3A2B2F;
+  --ok:#7CCB98; --danger:#F08A7E; --on-ink:#1E1719; color-scheme:dark}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--page);color:var(--ink);font-family:var(--font);font-weight:700;-webkit-tap-highlight-color:transparent}
+button,input,textarea{font-family:inherit;font-weight:800;color:inherit}
+button{cursor:pointer;border:0;background:none}
+:focus-visible{outline:3px solid var(--rose);outline-offset:2px}
+#app{max-width:440px;margin:0 auto;min-height:100%;background:var(--bg);position:relative;display:flex;flex-direction:column}
+@media (min-width:520px){#app{min-height:calc(100% - 32px);margin-block:16px;border-radius:32px;box-shadow:0 20px 60px rgba(90,40,50,.15);overflow:hidden}}
+.screen{flex:1;display:flex;flex-direction:column;min-height:0}
+.scroll{flex:1;overflow-y:auto;padding:12px 18px 96px;display:flex;flex-direction:column;gap:14px}
+h1,h2,h3,h4,p{margin:0}
+h2,h3{text-wrap:balance}
+
+/* Header */
+.hdr{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:2px solid var(--line);padding:10px 18px;display:flex;align-items:center;gap:10px}
+.hdr .brand{display:flex;align-items:center;gap:10px;flex:1;min-width:0}
+.hdr img{width:40px;height:40px;border-radius:12px}
+.hdr .t{font-size:20px;font-weight:900;color:var(--rose);line-height:1.1}
+.hdr .s{font-size:11px;color:var(--muted);font-weight:700}
+.iconbtn{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:var(--rose);flex:none}
+.iconbtn:hover{background:var(--blush)}
+.iconbtn svg{width:24px;height:24px}
+
+/* Menu */
+.menu-back{position:fixed;inset:0;z-index:40}
+.menu{position:absolute;top:58px;inset-inline-end:14px;z-index:41;width:220px;background:var(--bg);border:2px solid var(--line);border-radius:18px;box-shadow:0 16px 40px rgba(60,20,30,.18);padding:6px;display:flex;flex-direction:column}
+.menu .who{display:flex;align-items:center;gap:10px;padding:8px 10px 10px;border-bottom:2px solid var(--line);margin-bottom:4px}
+.menu .who b{color:var(--rose);font-weight:900}
+.menu button{display:flex;justify-content:space-between;align-items:center;padding:11px 12px;border-radius:12px;font-size:14px;text-align:start}
+.menu button:hover{background:var(--blush)}
+.menu .out{color:var(--danger)}
+
+/* Bottom nav */
+.nav{position:absolute;bottom:0;inset-inline:0;z-index:15;background:var(--bg);border-top:2px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr);padding:6px 4px calc(8px + env(safe-area-inset-bottom,0px))}
+.nav button{display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 0;color:var(--muted);font-size:11px;font-weight:800;border-radius:12px}
+.nav button svg{width:24px;height:24px}
+.nav button.on{color:var(--rose)}
+.nav button.on svg{fill:var(--blush-2)}
+
+/* Cards and pieces */
+.card{background:var(--blush);border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.pill{align-self:flex-start;background:var(--rose);color:#fff;font-size:12px;font-weight:900;padding:4px 12px;border-radius:999px}
+.row{display:flex;align-items:center;gap:12px}
+.between{justify-content:space-between}
+.h-title{font-size:20px;font-weight:900;color:var(--rose)}
+.sub{font-size:13px;color:var(--muted)}
+.body{font-size:15px;line-height:1.75;font-weight:700}
+.btn{background:var(--ink);color:var(--on-ink);border-radius:22px;padding:15px;font-size:16px;font-weight:900;width:100%}
+.btn:disabled{opacity:.5}
+.btn.rose{background:var(--rose);color:#fff}
+.btn.soft{background:var(--blush-2);color:var(--rose-strong)}
+.field{width:100%;background:var(--blush);border:2px solid transparent;border-radius:18px;padding:14px 16px;font-size:15px;outline:none}
+.field:focus{border-color:var(--rose)}
+.field::placeholder{color:var(--muted);opacity:.8}
+.err{color:var(--danger);font-size:13px;font-weight:800;min-height:1em}
+.toast{position:fixed;bottom:96px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--on-ink);padding:10px 18px;border-radius:999px;font-size:14px;font-weight:800;z-index:90;max-width:90vw;text-align:center}
+
+/* Splash */
+.splash{flex:1;display:flex;flex-direction:column;justify-content:space-between;align-items:center;padding:20vh 24px 12vh;text-align:center;gap:24px;cursor:pointer}
+.splash img{width:150px;height:150px;border-radius:36px;box-shadow:0 14px 40px rgba(197,123,136,.35);animation:pop .9s ease both}
+.splash h1{font-size:34px;font-weight:900;color:var(--rose);margin-top:18px}
+.splash .en{font-size:18px;color:var(--rose);font-weight:800;letter-spacing:.06em}
+.splash .tag{font-size:20px;color:var(--rose);font-weight:800;line-height:1.8}
+.splash .skip{font-size:12px;color:var(--muted)}
+@keyframes pop{from{transform:scale(.7);opacity:.3}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* Login */
+.choice{background:var(--blush);border-radius:22px;padding:18px;text-align:start;display:flex;align-items:center;gap:14px;transition:transform .15s}
+.choice:active{transform:scale(.98)}
+.choice .ic{width:52px;height:52px;border-radius:16px;background:var(--bg);display:grid;place-items:center;flex:none;color:var(--rose)}
+.choice .ic svg{width:28px;height:28px}
+.choice b{display:block;font-size:18px;font-weight:900;color:var(--rose)}
+.choice span{font-size:13px;color:var(--muted)}
+
+/* Avatars */
+.avs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px 8px}
+.av{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:12px;color:var(--muted)}
+.av .ring{width:64px;height:64px;border-radius:50%;border:3px solid transparent;overflow:hidden;display:grid;place-items:center;transition:transform .15s}
+.av.on .ring{border-color:var(--rose);transform:scale(1.06)}
+.av.on{color:var(--rose)}
+.av .ring svg,.av .ring img{width:100%;height:100%;object-fit:cover}
+.av .plus{background:var(--ink);color:var(--on-ink);font-size:28px}
+.code{display:flex;justify-content:center;gap:8px;direction:ltr}
+.code input{width:44px;height:50px;text-align:center;font-size:20px;font-weight:900;border-radius:14px;background:var(--blush);border:2px solid transparent;outline:none;color:var(--rose)}
+.code input:focus{border-color:var(--rose)}
+
+/* Home */
+.mood{display:flex;align-items:center;gap:14px;background:var(--blush);border-radius:22px;padding:16px;text-align:start}
+.mood .face{width:56px;height:56px;border-radius:50%;background:var(--bg);display:grid;place-items:center;flex:none}
+.mood .face svg{width:40px;height:40px}
+.mood b{font-size:18px;font-weight:900;color:var(--rose);display:block}
+.mood span{font-size:13px;color:var(--muted)}
+.chev{margin-inline-start:auto;color:var(--rose);font-size:22px}
+
+/* Consult */
+.chatbar{display:flex;align-items:flex-end;gap:8px;background:var(--ink);border-radius:26px;padding:8px}
+.chatbar textarea{flex:1;background:transparent;border:0;outline:none;color:var(--on-ink);resize:none;font-size:15px;padding:8px 10px;max-height:120px;line-height:1.6}
+.chatbar textarea::placeholder{color:var(--on-ink);opacity:.55}
+.send{width:42px;height:42px;border-radius:50%;background:var(--rose);color:#fff;display:grid;place-items:center;flex:none}
+.send svg{width:20px;height:20px}
+[dir="rtl"] .send svg{transform:scaleX(-1)}
+.msgs{display:flex;flex-direction:column;gap:8px}
+.msg{max-width:86%;padding:10px 14px;border-radius:18px;font-size:14px;line-height:1.75;white-space:pre-wrap}
+.msg.me{align-self:flex-start;background:var(--rose);color:#fff;border-start-start-radius:6px}
+.msg.ai{align-self:flex-end;background:var(--blush);border-start-end-radius:6px}
+.faq{background:var(--blush);border-radius:16px;overflow:hidden}
+.faq>button{width:100%;padding:13px 16px;display:flex;justify-content:space-between;align-items:center;gap:8px;text-align:start;font-size:14px}
+.faq>button i{font-style:normal;color:var(--rose);transition:transform .2s}
+.faq.open>button i{transform:rotate(180deg)}
+.faq p{padding:0 16px 14px;font-size:14px;line-height:1.75;color:var(--muted)}
+.sec-t{font-size:15px;font-weight:900;color:var(--rose)}
+
+/* Activities */
+.tabs{display:grid;grid-template-columns:1fr 1fr;background:var(--blush);padding:4px;border-radius:16px}
+.tabs button{padding:9px;border-radius:12px;font-size:15px;font-weight:900;color:var(--rose)}
+.tabs button.on{background:var(--rose);color:#fff}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.act{background:var(--blush);border-radius:20px;padding:14px 12px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;min-height:168px;position:relative}
+.act .em{width:44px;height:44px;border-radius:50%;background:var(--bg);display:grid;place-items:center;font-size:22px}
+.act h4{font-size:14px;font-weight:900;line-height:1.4}
+.act small{font-size:11px;color:var(--rose);font-weight:800}
+.act .foot{margin-top:auto;font-size:11px;color:var(--muted);border-top:2px solid var(--line);padding-top:6px;width:100%}
+.act .done{position:absolute;top:8px;inset-inline-start:8px;background:var(--ok);color:#fff;font-size:10px;padding:2px 8px;border-radius:999px}
+.weekbar{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted)}
+
+/* Sheet modal */
+.sheet-back{position:fixed;inset:0;background:rgba(40,20,25,.5);z-index:60;display:flex;align-items:flex-end;justify-content:center}
+.sheet{background:var(--bg);width:100%;max-width:440px;border-radius:28px 28px 0 0;padding:20px 18px calc(20px + env(safe-area-inset-bottom,0px));max-height:88vh;overflow-y:auto;display:flex;flex-direction:column;gap:14px;animation:up .25s ease}
+@keyframes up{from{transform:translateY(40px);opacity:.5}to{transform:none;opacity:1}}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{background:var(--blush);border-radius:16px;padding:13px 16px;text-align:start;font-size:15px;border:2px solid transparent}
+.opt.right{border-color:var(--ok);color:var(--ok)}
+.opt.wrong{border-color:var(--danger);color:var(--danger)}
+.prog{height:8px;border-radius:99px;background:var(--blush);overflow:hidden}
+.prog i{display:block;height:100%;background:var(--rose);transition:width .3s}
+
+/* Family + profile */
+.digits{display:flex;gap:6px;direction:ltr}
+.digits span{width:36px;height:40px;border-radius:12px;background:var(--ink);color:var(--on-ink);display:grid;place-items:center;font-weight:900;font-size:17px;font-variant-numeric:tabular-nums}
+.members{display:flex;gap:14px;overflow-x:auto;padding-block:4px}
+.member{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:12px;flex:none}
+.member .ring{width:58px;height:58px;border-radius:50%;overflow:hidden}
+.member .ring svg,.member .ring img{width:100%;height:100%;object-fit:cover}
+.stat{display:flex;justify-content:space-between;align-items:center;background:var(--blush);border-radius:18px;padding:14px 16px}
+.stat b{font-size:24px;font-weight:900;color:var(--rose);font-variant-numeric:tabular-nums}
+.quote{text-align:center;font-size:16px;color:var(--rose);font-weight:800;line-height:1.8;padding:6px 10px}
+.phrase{background:var(--blush);border-radius:20px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.phrase .top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.phrase .top b{font-size:14px;font-weight:900}
+.copy{background:var(--bg);color:var(--rose);font-size:12px;font-weight:900;padding:6px 12px;border-radius:999px;display:flex;align-items:center;gap:4px;flex:none}
+.phrase p{font-size:15px;line-height:1.8;user-select:text}
+.profile-top{display:flex;align-items:center;gap:14px;background:var(--blush);border-radius:22px;padding:16px}
+.profile-top .ring{width:72px;height:72px;border-radius:50%;overflow:hidden;flex:none}
+.profile-top .ring svg,.profile-top .ring img{width:100%;height:100%;object-fit:cover}
+.thinking{color:var(--rose);font-size:13px;animation:pulse 1.2s infinite}
+@keyframes pulse{50%{opacity:.4}}
+.hist{background:var(--blush);border-radius:16px;padding:12px 14px;text-align:start;display:flex;flex-direction:column;gap:2px}
+.hist small{color:var(--muted);font-size:12px}
+</style>
+
+<div id="app"></div>
+
+<script>
+(()=>{
+const LOGO="data:image/jpeg;base64,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";
+const $=(s,r=document)=>r.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+/* ---------- storage ---------- */
+const KEY="olfa_app_v1";
+let S={lang:"ar",user:null,points:0,familyPoints:0,done:{},chats:[],report:null,wisdomDay:null};
+try{const raw=localStorage.getItem(KEY);if(raw)S=Object.assign(S,JSON.parse(raw))}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
+
+/* ---------- time rotation (Riyadh) ---------- */
+const dayNo=()=>Math.floor((Date.now()+3*3600e3)/86400e3);
+const weekNo=()=>Math.floor((dayNo()+4)/7); // weeks start Sunday
+const pick=(arr,n,seed)=>{const a=arr.slice();let x=seed*9301+49297;for(let i=a.length-1;i>0;i--){x=(x*9301+49297)%233280;const j=x%(i+1);[a[i],a[j]]=[a[j],a[i]]}return a.slice(0,n)};
+
+/* ---------- text ---------- */
+const T={
+ar:{brand:"أُلفة",brandFull:"أُلفة العائلة",sub:"واحة التفاهم الأسري",tag1:"نقرب القلوب... ونبني",tag2:"تَفاهماً يدوم",skip:"اضغط للمتابعة",
+login:"تسجيل الدخول",c1:"أنشئ مساحة عائلتك",c1s:"أنشئ حساب عائلتك واحصل على كود الدعوة",c2:"الأفراد",c2s:"أنشئ حسابك الخاص المستقل",c3:"هل لديك كود العائلة؟",c3s:"أدخل الكود وانضم إلى مساحة عائلتك الخاصة",loginQuote:"«الحل لا يكون في تحديد المخطئ، بل في فهم بعضنا بعضًا بشكلٍ أفضل»",
+join:"انضم إلى عائلتك",step:"“خطوة صغيرة تعيد القرب”",name:"اسمك",age:"عمرك",role:"صفة الفرد في العائلة",pass:"كلمة السر",pass2:"تأكيد كلمة السر",codeHint:"أدخل الكود المكون من 6 أرقام الذي أرسله لك مشرف العائلة",pickAv:"اختر صورتك الشخصية حسب صفتك في العائلة",yourPhoto:"صورتك",start:"«ابدأ رحلة الألفة»",
+eName:"اكتب اسمك",ePass:"كلمة السر لازم تكون 4 أحرف أو أكثر",eMatch:"كلمتا السر غير متطابقتين",eCode:"أدخل الكود كامل (6 أرقام)",
+home:"الرئيسية",consult:"الاستشارات",family:"حالة العائلة",acts:"الأنشطة",me:"ملفي",
+hello:"مرحباً",helloSub:"في مساحة تجمع العائلة بمحبة ووعي",mood:"كيف حالك اليوم؟",moodSub:"عبّر عن مشاعرك وستساعدك أُلفة على تجاوزها بلطف",tip:"نصيحة اليوم",sug:"اقتراح اليوم",more:"اضغط لرؤية التفاصيل",less:"طي التفاصيل",newTomorrow:"تتجدد كل يوم",
+cHi:"مرحباً، أنا أُلفة",cQ:"وش اللي يضايقك؟",cSub:"اكتب استشارتك وأنا أساعدك بلطف وسرية",cPh:"اكتب تفاصيل استشارتك هنا...",faqT:"الأسئلة الأكثر شيوعاً",thinking:"أُلفة تفكر في ردّها...",newChat:"محادثة جديدة",aiOff:"المساعد الذكي غير متاح هنا الآن. جرّب الأسئلة الشائعة تحت، أو افتح التطبيق من داخل Claude.",aiOn:"فعّل الذكاء الاصطناعي",aiAsk:"عشان أُلفة ترد عليك وتقيّم حكمتك وتكتب تقرير العائلة، فعّلي الذكاء الاصطناعي مرة وحدة.",aiDenied:"الذكاء الاصطناعي مقفل. اضغطي الزر وشغّلي «Claude» من نافذة الأذونات.",aiOutside:"الذكاء الاصطناعي يشتغل لما تفتحين التطبيق من رابطه في Claude، وما يشتغل من نسخة منزّلة أو من موقع ثاني.",aiReady:"الذكاء الاصطناعي مفعّل ✓",aiErr:"صار خطأ بسيط في الاتصال. حاول مرة ثانية.",
+week:"اختيارات هذا الأسبوع",games:"ألعاب",challenges:"تحديات",renew:"تتجدد كل أسبوع",done:"تم ✓",pts:"نقطة",
+wisdomT:"لعبة حكمة اليوم",wisdomD:"اكتب حكمة عائلية واكسب نقاط",wisdomHelp:"اكتب حكمة أو مقولة دافئة تؤمن بها عائلتكم، وأُلفة تقيّمها وتعطيك نقاطك.",wisdomPh:"اكتب حكمتك هنا...",wisdomMin:"اكتب حكمة كاملة (10 أحرف على الأقل)",evaluate:"قيّم حكمتي",evaluating:"أُلفة تقرأ حكمتك...",wisdomDone:"لعبت حكمة اليوم! ارجع بكرة لحكمة جديدة.",
+qOf:"سؤال",result:"النتيجة",correct:"إجابة صحيحة",earned:"كسبت",close:"إغلاق",next:"التالي",finish:"إنهاء",playAgain:"العب مرة ثانية",
+chDo:"أنجزنا التحدي اليوم",chDone:"أنجزتوه اليوم، بارك الله فيكم! ارجعوا بكرة.",chHow:"طريقة التحدي",
+famCode:"كود العائلة",share:"مشاركة",copied:"تم النسخ",members:"أفراد العائلة",famPts:"نقاط العائلة",report:"تقرير الأسبوع من أُلفة",reportLoading:"أُلفة تكتب تقرير هذا الأسبوع...",famQuote:"«الكلمة الطيبة تقرّب القلوب أكثر مما تتخيل»",indiv:"حسابك فردي. أنشئ مساحة عائلة أو انضم بكود عشان تشوف حالة عائلتك.",makeFam:"أنشئ مساحة عائلة",joinFam:"انضم بكود",you:"أنت",
+myPts:"نقاطي",member:"عضو فعّال",years:"سنة",forYou:"لك...",phrasesT:"عبارات حوار بنّاءة",copy:"نسخ",
+prev:"محادثاتي السابقة",lang:"English",logout:"تسجيل الخروج",noChats:"ما عندك محادثات سابقة.",open:"فتح",
+roles:{father:"الأب",mother:"الأم",son:"الابن",daughter:"الابنة",grandpa:"الجد",grandma:"الجدة"}},
+en:{brand:"Olfa",brandFull:"Olfa Family",sub:"A home for family understanding",tag1:"Bringing hearts closer,",tag2:"building lasting understanding",skip:"Tap to continue",
+login:"Sign in",c1:"Create your family space",c1s:"Set up your family account and get an invite code",c2:"Individuals",c2s:"Create your own personal account",c3:"Have a family code?",c3s:"Enter the code to join your family's space",loginQuote:"“The answer isn't finding who's wrong, it's understanding each other better.”",
+join:"Join your family",step:"“A small step that brings us closer”",name:"Your name",age:"Your age",role:"Your role in the family",pass:"Password",pass2:"Confirm password",codeHint:"Enter the 6-digit code your family admin sent you",pickAv:"Pick a picture for your role in the family",yourPhoto:"Your photo",start:"Start the Olfa journey",
+eName:"Enter your name",ePass:"Password must be at least 4 characters",eMatch:"Passwords don't match",eCode:"Enter the full 6-digit code",
+home:"Home",consult:"Support",family:"Family",acts:"Activities",me:"Profile",
+hello:"Welcome",helloSub:"A space that brings the family together with love and care",mood:"How are you today?",moodSub:"Share how you feel and Olfa will gently help you through it",tip:"Tip of the day",sug:"Today's idea",more:"Tap for details",less:"Hide details",newTomorrow:"New every day",
+cHi:"Hi, I'm Olfa",cQ:"What's on your mind?",cSub:"Write your concern and I'll help, kindly and privately",cPh:"Describe what's going on...",faqT:"Common questions",thinking:"Olfa is thinking...",newChat:"New chat",aiOff:"The smart assistant isn't available here right now. Try the common questions below, or open the app inside Claude.",aiOn:"Turn on AI",aiAsk:"Turn on AI once so Olfa can reply to you, rate your sayings and write the family report.",aiDenied:"AI is switched off. Tap the button and turn on “Claude” in the permissions window.",aiOutside:"AI works when you open the app from its Claude link. It doesn't work in a downloaded copy or on another website.",aiReady:"AI is on ✓",aiErr:"A small connection problem happened. Please try again.",
+week:"This week's picks",games:"Games",challenges:"Challenges",renew:"Refreshes weekly",done:"Done ✓",pts:"pts",
+wisdomT:"Wisdom of the Day",wisdomD:"Write a family saying and earn points",wisdomHelp:"Write a warm saying your family believes in. Olfa will rate it and give you points.",wisdomPh:"Write your saying here...",wisdomMin:"Write a full saying (at least 10 characters)",evaluate:"Rate my saying",evaluating:"Olfa is reading your saying...",wisdomDone:"You've played today! Come back tomorrow for a new one.",
+qOf:"Question",result:"Result",correct:"correct",earned:"You earned",close:"Close",next:"Next",finish:"Finish",playAgain:"Play again",
+chDo:"We did it today",chDone:"Done for today, well done! Come back tomorrow.",chHow:"How it works",
+famCode:"Family code",share:"Share",copied:"Copied",members:"Family members",famPts:"Family points",report:"Olfa's weekly report",reportLoading:"Olfa is writing this week's report...",famQuote:"“A kind word brings hearts closer than you think.”",indiv:"You have an individual account. Create a family space or join with a code to see your family's status.",makeFam:"Create a family space",joinFam:"Join with a code",you:"You",
+myPts:"My points",member:"Active member",years:"years",forYou:"For you...",phrasesT:"Constructive phrases",copy:"Copy",
+prev:"My past chats",lang:"العربية",logout:"Sign out",noChats:"No past chats yet.",open:"Open",
+roles:{father:"Father",mother:"Mother",son:"Son",daughter:"Daughter",grandpa:"Grandfather",grandma:"Grandmother"}}};
+const t=k=>T[S.lang][k];
+const L=o=>o[S.lang]??o.ar;
+
+/* ---------- content ---------- */
+const TIPS=[
+{ar:"امدح سلوكاً جميلاً رأيته من أحد أفراد عائلتك أمام الجميع.",en:"Praise something kind a family member did, in front of everyone."},
+{ar:"اسأل أحد أفراد عائلتك عن أجمل لحظة مرّت عليه اليوم.",en:"Ask a family member about the best moment of their day."},
+{ar:"اترك جوالك بعيداً أثناء وجبة العشاء واستمتع بالحديث.",en:"Put your phone away at dinner and enjoy the conversation."},
+{ar:"قل «شكراً» على شيء صغير تعودت عليه ونسيت تقديره.",en:"Say “thank you” for a small thing you've stopped noticing."},
+{ar:"إذا زعلت، أجّل النقاش لين تهدأ، الكلمة وقت الغضب تجرح.",en:"If you're upset, wait until you're calm. Words said in anger hurt."},
+{ar:"اعتذر بصدق عن خطأ صغير، الاعتذار يقرّب ولا يُنقص.",en:"Apologize sincerely for a small mistake. It brings you closer."},
+{ar:"اتصل بأحد أقاربك اللي ما كلمته من زمان.",en:"Call a relative you haven't spoken to in a while."},
+{ar:"شارك والديك في قرار بسيط تأخذه اليوم، يحبون يحسّون بقربك.",en:"Involve your parents in a small decision today. They'll feel close to you."},
+{ar:"استمع للآخر حتى يكمل كلامه قبل ما ترد، ولا تقاطعه.",en:"Listen all the way through before you answer, without interrupting."},
+{ar:"ادعُ لأفراد عائلتك بأسمائهم اليوم.",en:"Pray for your family members by name today."}];
+const SUGS=[
+{ar:["مبادرة برّ عائلية صغيرة","اتفقوا على عمل خير جماعي: زيارة قريب، أو تجهيز صدقة. العطاء يوحّد القلوب ويبارك الأوقات.","٤٥ دقيقة"],en:["A small family good deed","Agree on one good deed together: visit a relative or prepare a charity bag. Giving unites hearts.","45 min"]},
+{ar:["جلسة قهوة وذكريات","اجتمعوا على القهوة وطالعوا صوراً قديمة للعائلة، وكل واحد يحكي قصة صورة.","٣٠ دقيقة"],en:["Coffee and memories","Gather over coffee and look at old family photos. Each person tells the story behind one.","30 min"]},
+{ar:["طبخة جماعية","اختاروا طبخة سهلة وكل فرد يتولى مهمة. الأكل اللي نسويه سوا أطيب.","٦٠ دقيقة"],en:["Cook together","Pick an easy dish and give everyone a task. Food made together tastes better.","60 min"]},
+{ar:["مشية مسائية","اطلعوا مشي قريب من البيت بدون جوالات، وتكلموا عن أسبوعكم.","٣٠ دقيقة"],en:["Evening walk","Take a walk near home without phones and talk about your week.","30 min"]},
+{ar:["رسائل محبة","كل واحد يكتب ورقة صغيرة فيها شيء يحبه في فرد ثاني ويخبيها له.","١٥ دقيقة"],en:["Love notes","Everyone writes a short note about something they love in another family member and hides it for them.","15 min"]},
+{ar:["مجلس حكايات","الكبار يحكون للصغار قصة من طفولتهم، والصغار يسألون.","٣٠ دقيقة"],en:["Story circle","The elders tell the young ones a story from their childhood, and the kids ask questions.","30 min"]},
+{ar:["ركن القراءة","اختاروا كتاباً أو قصة قصيرة وكل واحد يقرأ صفحة بصوت عالٍ.","٢٠ دقيقة"],en:["Reading corner","Pick a book or short story and take turns reading a page aloud.","20 min"]}];
+const FAQ=[
+{ar:["زعلان من شخص أو موقف","خذ نفساً عميقاً ولا ترد مباشرة. اكتب اللي ضايقك في ورقة أولاً عشان يصفى ذهنك، وبعدها اختر وقتاً هادئاً للكلام."],en:["Upset with someone or something","Take a deep breath and don't reply right away. Write down what bothered you first to clear your head, then choose a calm time to talk."]},
+{ar:["غضب أو خلاف","ابتعد عن المكان دقائق لين تهدأ. تذكّر أن الهدف حل المشكلة، مو الفوز في النقاش."],en:["Anger or an argument","Step away for a few minutes until you calm down. Remember the goal is solving the problem, not winning."]},
+{ar:["إحساس بالإحباط أو الذنب","الخطأ جزء من طبيعتنا. سامح نفسك، وركّز على خطوة صغيرة تقدر تحسّنها الآن."],en:["Feeling discouraged or guilty","Mistakes are part of being human. Forgive yourself and focus on one small step you can improve now."]},
+{ar:["ضغط دراسي","قسّم مهامك لأجزاء صغيرة، وخذ استراحة قصيرة بين كل جزء. جهدك المستمر أهم من الكمال."],en:["School pressure","Break your tasks into small pieces with short breaks in between. Steady effort matters more than perfection."]},
+{ar:["صعوبة التفاهم مع الوالدين","اختر وقتاً يكونون فيه مرتاحين، وابدأ بتقدير حرصهم عليك قبل ما تطرح رأيك."],en:["Hard to talk with my parents","Choose a time when they're relaxed, and start by appreciating how much they care before sharing your view."]},
+{ar:["أقارن نفسي بإخواني","لكل واحد رحلته ومميزاته. منافستك الحقيقية مع نفسك أمس، مو مع غيرك."],en:["Comparing myself to my siblings","Everyone has their own path and strengths. Your real competition is yourself yesterday."]},
+{ar:["أحس بالوحدة وسط العائلة","ابدأ بمبادرة بسيطة: ساعد في تجهيز القهوة، أو اسأل أحدهم عن يومه. الخطوة الأولى تكسر الحاجز."],en:["Feeling lonely around family","Start small: help make the coffee or ask someone about their day. The first step breaks the ice."]},
+{ar:["خلاف على مهام البيت","اقترح جلسة قصيرة تكتبون فيها المهام وتوزعونها بشكل واضح ومرن يرضي الجميع."],en:["Arguing over chores","Suggest a short meeting to list the chores and share them out clearly and fairly."]}];
+const PHRASES=[
+{ar:["فتح باب الحوار مع مراهق","أنا موجود لك وقت ما تحتاجني، بدون محاضرات، بس أبغاك تعرف إن رأيك يهمني وأنا أسمعك."],en:["Opening up to a teenager","I'm here whenever you need me, no lectures. I just want you to know your opinion matters to me and I'm listening."]},
+{ar:["طمأنينة طفل خائف","أنا جنبك ولا راح يصير شي، كل الناس تخاف أحياناً، وإحساسك طبيعي، تعال نتكلم عنه سوا."],en:["Comforting a scared child","I'm right here and you're safe. Everyone gets scared sometimes and that's okay. Let's talk about it together."]},
+{ar:["شكر الوالدين وبرّهما","ما قصّرتوا معي يوم، وأنا أدعي لكم من قلبي، وجودكم في حياتي نعمة ما أقدر أوفيها."],en:["Thanking your parents","You've never let me down. I pray for you with all my heart. Having you in my life is a blessing I can never repay."]},
+{ar:["بعد خلاف مع أخ أو أخت","يمكن ما فهمت قصدك صح، ودي نتكلم بهدوء لأني ما أحب يكون بيننا زعل."],en:["After a fight with a sibling","Maybe I didn't understand what you meant. I'd like us to talk calmly, I don't want us to stay upset."]},
+{ar:["تشجيع فرد متعب","أشوف قد إيش تتعب، وأنا فخور فيك. خذ راحتك، وإذا احتجت شي أنا موجود."],en:["Encouraging a tired family member","I see how hard you're working and I'm proud of you. Take a rest, and I'm here if you need anything."]}];
+
+const QUIZZES={
+seerah:{em:"🕌",t:{ar:"ألغاز السيرة النبوية",en:"Prophet's Biography Quiz"},d:{ar:"معرفة دينية",en:"Islamic knowledge"},q:[
+{ar:["أين وُلد النبي ﷺ؟",["مكة المكرمة","المدينة المنورة","الطائف"]],en:["Where was the Prophet ﷺ born?",["Makkah","Madinah","Taif"]],a:0},
+{ar:["في أي عام وُلد النبي ﷺ؟",["عام الحزن","عام الفيل","عام الفتح"]],en:["In which year was the Prophet ﷺ born?",["Year of Sorrow","Year of the Elephant","Year of the Conquest"]],a:1},
+{ar:["ما اسم مرضعة النبي ﷺ؟",["حليمة السعدية","أم أيمن","خديجة"]],en:["Who nursed the Prophet ﷺ as a baby?",["Halimah As-Sa'diyyah","Umm Ayman","Khadijah"]],a:0},
+{ar:["في أي غار نزل الوحي أول مرة؟",["غار ثور","غار حراء","غار أحد"]],en:["In which cave did revelation first come?",["Cave of Thawr","Cave of Hira","Cave of Uhud"]],a:1},
+{ar:["من رافق النبي ﷺ في الهجرة؟",["عمر بن الخطاب","علي بن أبي طالب","أبو بكر الصديق"]],en:["Who accompanied the Prophet ﷺ on the Hijrah?",["Umar ibn al-Khattab","Ali ibn Abi Talib","Abu Bakr as-Siddiq"]],a:2}]},
+cities:{em:"🏙️",t:{ar:"مسابقة مدن المملكة",en:"Saudi Cities Quiz"},d:{ar:"ثقافة وطنية",en:"National culture"},q:[
+{ar:["ما عاصمة المملكة العربية السعودية؟",["جدة","الرياض","الدمام"]],en:["What is the capital of Saudi Arabia?",["Jeddah","Riyadh","Dammam"]],a:1},
+{ar:["أي مدينة تُلقّب بعروس البحر الأحمر؟",["جدة","ينبع","جازان"]],en:["Which city is called the Bride of the Red Sea?",["Jeddah","Yanbu","Jazan"]],a:0},
+{ar:["أي مدينة تشتهر بالورد الطائفي؟",["أبها","الطائف","تبوك"]],en:["Which city is famous for its roses?",["Abha","Taif","Tabuk"]],a:1},
+{ar:["أبها هي عاصمة أي منطقة؟",["عسير","الباحة","نجران"]],en:["Abha is the capital of which region?",["Asir","Al-Baha","Najran"]],a:0},
+{ar:["في أي منطقة تقع العُلا؟",["تبوك","حائل","المدينة المنورة"]],en:["Which region is AlUla in?",["Tabuk","Hail","Madinah"]],a:2}]},
+islamic:{em:"🌙",t:{ar:"من سيربح؟ أسئلة إسلامية",en:"Who Wins? Islamic Questions"},d:{ar:"تحدي المعرفة",en:"Knowledge challenge"},q:[
+{ar:["كم عدد أركان الإسلام؟",["أربعة","خمسة","ستة"]],en:["How many pillars of Islam are there?",["Four","Five","Six"]],a:1},
+{ar:["ما أطول سورة في القرآن الكريم؟",["آل عمران","النساء","البقرة"]],en:["What is the longest surah in the Quran?",["Al Imran","An-Nisa","Al-Baqarah"]],a:2},
+{ar:["في أي شهر يصوم المسلمون؟",["رمضان","شعبان","شوال"]],en:["In which month do Muslims fast?",["Ramadan","Sha'ban","Shawwal"]],a:0},
+{ar:["كم عدد الصلوات المفروضة في اليوم؟",["ثلاث","أربع","خمس"]],en:["How many obligatory prayers are there each day?",["Three","Four","Five"]],a:2},
+{ar:["أي سورة تعدل ثلث القرآن؟",["الإخلاص","الفاتحة","الكوثر"]],en:["Which surah equals a third of the Quran?",["Al-Ikhlas","Al-Fatihah","Al-Kawthar"]],a:0}]},
+proverbs:{em:"📜",t:{ar:"أكمل المثل",en:"Finish the Proverb"},d:{ar:"حكمة وتراث",en:"Heritage and wisdom"},q:[
+{ar:["الجار قبل ...",["البيت","الدار","الطريق"]],en:["“The neighbor before the ...”",["house","home","road"]],a:1},
+{ar:["من جدّ ...",["وجد","نجح","فاز"]],en:["“Whoever strives ...”",["finds","wins","rests"]],a:0},
+{ar:["الوقت كالسيف ...",["يلمع دائماً","إن لم تقطعه قطعك","لا يعود"]],en:["“Time is like a sword ...”",["always shiny","if you don't cut it, it cuts you","never returns"]],a:1},
+{ar:["القناعة كنز ...",["ثمين","مدفون","لا يفنى"]],en:["“Contentment is a treasure that ...”",["is precious","is buried","never runs out"]],a:2},
+{ar:["العلم في الصغر ...",["كالنقش على الحجر","كالماء في النهر","كالضوء في الليل"]],en:["“Learning when young is like ...”",["carving in stone","water in a river","light at night"]],a:0}]},
+science:{em:"🔭",t:{ar:"تحدي المعلومات العامة",en:"General Knowledge"},d:{ar:"علوم وثقافة",en:"Science and culture"},q:[
+{ar:["ما الكوكب الأحمر؟",["المشتري","المريخ","الزهرة"]],en:["Which planet is known as the red planet?",["Jupiter","Mars","Venus"]],a:1},
+{ar:["ما أكبر محيط في العالم؟",["الهادئ","الأطلسي","الهندي"]],en:["What is the largest ocean?",["Pacific","Atlantic","Indian"]],a:0},
+{ar:["كم يوماً في السنة الكبيسة؟",["365","364","366"]],en:["How many days are in a leap year?",["365","364","366"]],a:2},
+{ar:["ما أسرع حيوان بري؟",["الفهد","الحصان","الغزال"]],en:["What is the fastest land animal?",["Cheetah","Horse","Gazelle"]],a:0},
+{ar:["عند كم درجة يغلي الماء عند سطح البحر؟",["90","100","120"]],en:["At what °C does water boil at sea level?",["90","100","120"]],a:1}]}};
+const CHALLENGES=[
+{id:"fajr",em:"🌅",t:{ar:"المحافظة على صلاة الفجر",en:"Praying Fajr on time"},d:{ar:"الالتزام",en:"Commitment"},h:{ar:"يوقظ أفراد العائلة بعضهم لصلاة الفجر في وقتها.",en:"Family members wake each other up to pray Fajr on time."}},
+{id:"kind",em:"💬",t:{ar:"كلمة طيبة يومياً",en:"A kind word daily"},d:{ar:"اللطف واللين",en:"Kindness"},h:{ar:"كل فرد يقول كلمة طيبة صادقة لفرد آخر في العائلة.",en:"Everyone says one sincere kind word to another family member."}},
+{id:"tidy",em:"🧹",t:{ar:"ترتيب جماعي للمنزل",en:"Tidy the house together"},d:{ar:"التعاون والنظام",en:"Teamwork"},h:{ar:"خصصوا ١٥ دقيقة يرتّب فيها الجميع مكاناً واحداً معاً.",en:"Spend 15 minutes all tidying one space together."}},
+{id:"listen",em:"📵",t:{ar:"جلسة إنصات بدون جوال",en:"Phone-free listening time"},d:{ar:"التواصل",en:"Connection"},h:{ar:"اجلسوا ٢٠ دقيقة بدون جوالات، وكل واحد يحكي عن يومه.",en:"Sit for 20 minutes without phones and each share about your day."}},
+{id:"meal",em:"🍽️",t:{ar:"وجبة عائلية مجتمعين",en:"One family meal together"},d:{ar:"القرب",en:"Closeness"},h:{ar:"اجتمعوا كلكم على وجبة واحدة على الأقل اليوم.",en:"Gather everyone for at least one meal today."}},
+{id:"help",em:"🤝",t:{ar:"مساعدة بدون طلب",en:"Help without being asked"},d:{ar:"المبادرة",en:"Initiative"},h:{ar:"كل فرد يساعد فرداً آخر في شيء بدون ما يُطلب منه.",en:"Everyone helps someone with something without being asked."}},
+{id:"quran",em:"📖",t:{ar:"ورد قرآني عائلي",en:"Family Quran reading"},d:{ar:"الإيمان",en:"Faith"},h:{ar:"اقرؤوا صفحة من القرآن معاً وتدارسوا معناها.",en:"Read one page of the Quran together and talk about its meaning."}},
+{id:"thanks",em:"💐",t:{ar:"يوم الشكر",en:"Day of thanks"},d:{ar:"الامتنان",en:"Gratitude"},h:{ar:"كل فرد يشكر كل أفراد العائلة على شيء محدد.",en:"Each person thanks every family member for something specific."}}];
+
+/* ---------- 3D-style avatars ---------- */
+function avatar(kind){
+  const id="g"+kind+Math.random().toString(36).slice(2,7);
+  const P={father:{bg:["#DCEBFA","#A9C9EE"],shirt:"#5B7DB1",hair:"#2B211E"},mother:{bg:["#FCE3E8","#F2B3C0"],shirt:"#C57B88",hijab:"#C57B88"},
+    son:{bg:["#DDF3E6","#A7DDBE"],shirt:"#3C9A6A",hair:"#5A3A22"},daughter:{bg:["#FFF0D6","#F7CF8E"],shirt:"#E28FA3",hair:"#6B3F24"},
+    grandpa:{bg:["#ECE4F7","#C9B7E8"],shirt:"#7C6BAA",hair:"#EDEDED"},grandma:{bg:["#E6F4F5","#B0DCE0"],shirt:"#4C9CA4",hijab:"#6FB3BA"}}[kind];
+  const skin=`<radialGradient id="${id}s" cx="38%" cy="32%" r="75%"><stop offset="0" stop-color="#FFE9D6"/><stop offset=".6" stop-color="#F3BE98"/><stop offset="1" stop-color="#D99270"/></radialGradient>`;
+  const bg=`<radialGradient id="${id}b" cx="35%" cy="25%" r="85%"><stop offset="0" stop-color="${P.bg[0]}"/><stop offset="1" stop-color="${P.bg[1]}"/></radialGradient>`;
+  const sh=c=>`<radialGradient id="${id}c" cx="40%" cy="20%" r="90%"><stop offset="0" stop-color="#fff" stop-opacity=".45"/><stop offset=".35" stop-color="${c}" stop-opacity="1"/><stop offset="1" stop-color="${c}" stop-opacity="1"/></radialGradient>`;
+  const gloss=`<radialGradient id="${id}g" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fff" stop-opacity=".7"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>`;
+  let behind="",front="",hairTop="";
+  const covered=P.hijab;
+  if(covered){
+    behind=`<path d="M20 56 Q20 16 50 16 Q80 16 80 56 Q80 84 50 88 Q20 84 20 56Z" fill="url(#${id}c)"/>`;
+  }
+  const shirtC=covered?P.hijab:P.shirt;
+  const body=`<path d="M14 100 Q16 76 50 74 Q84 76 86 100Z" fill="url(#${id}c)"/>`;
+  const head=`<ellipse cx="50" cy="49" rx="${covered?19:21}" ry="${covered?21:23}" fill="url(#${id}s)"/>`;
+  const ears=covered?"":`<circle cx="29" cy="51" r="4.5" fill="#EBA984"/><circle cx="71" cy="51" r="4.5" fill="#EBA984"/>`;
+  if(kind==="father"||kind==="grandpa"){
+    hairTop=`<path d="M28 46 Q27 24 50 23 Q73 24 72 46 Q68 33 50 33 Q32 33 28 46Z" fill="${P.hair}"/>`;
+    front+=`<path d="M30 52 Q31 74 50 75 Q69 74 70 52 Q66 64 50 64 Q34 64 30 52Z" fill="${P.hair}"/>`;
+  }
+  if(kind==="son") hairTop=`<path d="M28 47 Q26 22 50 22 Q74 22 72 47 Q70 36 60 34 Q56 40 44 36 Q34 36 28 47Z" fill="${P.hair}"/>`;
+  if(kind==="daughter"){
+    behind=`<circle cx="26" cy="38" r="9" fill="${P.hair}"/><circle cx="74" cy="38" r="9" fill="${P.hair}"/>`;
+    hairTop=`<path d="M28 48 Q26 22 50 22 Q74 22 72 48 Q66 32 50 34 Q36 32 28 48Z" fill="${P.hair}"/><path d="M68 28 l8 -6 l1 10Z M68 28 l-2 -9 l9 3Z" fill="#E86C8A"/>`;
+  }
+  const eyes="";
+  const brows=(kind==="grandpa"||kind==="father")?`<path d="M37 42 Q42 39 46 42 M54 42 Q58 39 63 42" stroke="${P.hair==="#EDEDED"?"#BDBDBD":P.hair}" stroke-width="2" fill="none" stroke-linecap="round"/>`:"";
+  const cheeks=`<ellipse cx="36" cy="57" rx="4" ry="2.6" fill="#F28B9B" opacity=".45"/><ellipse cx="64" cy="57" rx="4" ry="2.6" fill="#F28B9B" opacity=".45"/>`;
+  const mouth=`<path d="M44 59 Q50 64.5 56 59" stroke="${kind==="father"||kind==="grandpa"?"#F6D2C0":"#9A4A52"}" stroke-width="2.2" fill="none" stroke-linecap="round"/>`;
+  const glasses=(kind==="grandpa"||kind==="grandma")?`<g fill="none" stroke="#5A4A4E" stroke-width="1.6"><circle cx="42" cy="49" r="6"/><circle cx="58" cy="49" r="6"/><path d="M48 49h4"/></g>`:"";
+  const shine=`<ellipse cx="41" cy="36" rx="9" ry="5" fill="url(#${id}g)" opacity=".7"/>`;
+  return `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>${bg}${skin}${sh(shirtC)}${gloss}</defs>
+  <circle cx="50" cy="50" r="50" fill="url(#${id}b)"/><ellipse cx="34" cy="20" rx="20" ry="10" fill="#fff" opacity=".35"/>
+  ${behind}${body}${ears}${head}${hairTop}${front}${brows}${eyes}${glasses}${cheeks}${mouth}${shine}</svg>`;
+}
+const AV_KINDS=["father","mother","son","daughter","grandpa","grandma"];
+const userPic=u=>u?.photo?`<img src="${u.photo}" alt="">`:avatar(u?.avatar||"son");
+
+/* ---------- icons ---------- */
+const I={
+menu:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>`,
+back:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>`,
+home:`<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" fill="none"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>`,
+heart:`<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" fill="none"><path d="M12 20s-7-4.4-9-9a4.8 4.8 0 0 1 9-3 4.8 4.8 0 0 1 9 3c-2 4.6-9 9-9 9z"/></svg>`,
+fam:`<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" fill="none"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M2.5 20c.5-4 3-6 5.5-6s5 2 5.5 6zM13.5 20c.4-3 2-4.6 3.5-4.6s3.4 1.6 3.8 4.6z"/></svg>`,
+puzzle:`<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" fill="none"><path d="M10 4a2 2 0 1 1 4 0v2h4v4h-2a2 2 0 1 0 0 4h2v4h-4v-2a2 2 0 1 0-4 0v2H6v-4H4a2 2 0 1 1 0-4h2V6h4z"/></svg>`,
+user:`<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" fill="none"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4.5 4.2-6.5 8-6.5s7 2 8 6.5z" stroke-linejoin="round"/></svg>`,
+send:`<svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5l18-8.5L3 3.5l.02 6.6L15 12 3.02 13.9z"/></svg>`,
+copy:`<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V5.5A1.5 1.5 0 0 0 14.5 4h-9A1.5 1.5 0 0 0 4 5.5v9A1.5 1.5 0 0 0 5.5 16H8"/></svg>`,
+houseHeart:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9H3z"/><path d="M12 17s-3-1.8-3-3.8a1.6 1.6 0 0 1 3-.8 1.6 1.6 0 0 1 3 .8c0 2-3 3.8-3 3.8z"/></svg>`,
+key:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M16 7l3 3M14 9l2 2"/></svg>`,
+smile:`<svg viewBox="0 0 40 40"><defs><radialGradient id="mf" cx="38%" cy="30%" r="75%"><stop offset="0" stop-color="#FFE6A8"/><stop offset=".7" stop-color="#F8C04E"/><stop offset="1" stop-color="#E2A235"/></radialGradient></defs><circle cx="20" cy="20" r="18" fill="url(#mf)"/><ellipse cx="15" cy="17" rx="2.2" ry="2.8" fill="#4A3424"/><ellipse cx="25" cy="17" rx="2.2" ry="2.8" fill="#4A3424"/><path d="M13 24q7 6 14 0" stroke="#4A3424" stroke-width="2.4" fill="none" stroke-linecap="round"/><ellipse cx="11" cy="23" rx="3" ry="2" fill="#F28B9B" opacity=".55"/><ellipse cx="29" cy="23" rx="3" ry="2" fill="#F28B9B" opacity=".55"/><ellipse cx="14" cy="9" rx="6" ry="3" fill="#fff" opacity=".5"/></svg>`};
+
+/* ---------- AI ----------
+   داخل Claude: يستخدم Claude مباشرة.
+   على GitHub أو أي موقع ثاني: يستخدم سيرفرك (Cloudflare Worker). حطي رابطه هنا: */
+const AI_URL="https://olfa-ai.b-m-abushal.workers.dev/";
+async function serverAI(task,payload){
+  if(!AI_URL||AI_URL.startsWith("__"))throw{code:"none"};
+  const r=await fetch(AI_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({task,lang:S.lang,...payload})});
+  const d=await r.json().catch(()=>({}));
+  if(!r.ok||!d.text)throw{code:r.status===429?"rate_limited":"upstream_error"};
+  return d.text;
+}
+const hasServer=()=>!!AI_URL&&!AI_URL.startsWith("__");
+let samplePromise=null;
+const getSample=()=>samplePromise??=(window.claude?.use?window.claude.use("sample").catch(()=>null):Promise.resolve(null));
+let aiBlocked=false;
+let aiState=window.claude?.use?"unknown":"outside";
+let permsP=null;const getPerms=()=>permsP??=(window.claude?.use?window.claude.use("permissions").catch(()=>null):Promise.resolve(null));
+async function refreshAi(){const p=await getPerms();if(!p){aiState=hasServer()?"server":window.claude?"unavailable":"outside";}else{try{aiState=await p.state("sample")}catch(e){aiState="unavailable"}}aiBlocked=aiState==="denied"||aiState==="unavailable"||aiState==="outside";if(screen==="consult"||menuOpen)render()}
+async function turnOnAi(){
+  if(aiState==="outside"||aiState==="unavailable"){toast(t("aiOutside"));return}
+  const p=await getPerms();if(!p){toast(t("aiOutside"));return}
+  try{
+    if(aiState==="denied"){await p.manage()}else{await p.request(["sample"])}
+  }catch(e){toast(t("aiDenied"))}
+  await refreshAi();if(aiState==="granted")toast(t("aiReady"));
+}
+function aiBanner(){
+  if(aiState==="granted"||aiState==="unknown"||aiState==="server")return"";
+  const msg=aiState==="outside"||aiState==="unavailable"?t("aiOutside"):aiState==="denied"?t("aiDenied"):t("aiAsk");
+  return `<div class="card" style="gap:10px"><p class="body">✨ ${msg}</p>${aiState==="outside"||aiState==="unavailable"?"":`<button class="btn rose" data-act="aiOn">${t("aiOn")}</button>`}</div>`;
+}
+
+/* ---------- app shell ---------- */
+let screen="splash",regMode=null,menuOpen=false,chatId=null,thinking=false;
+const app=$("#app");
+function applyLang(){document.documentElement.lang=S.lang;document.documentElement.dir=S.lang==="ar"?"rtl":"ltr";document.title=t("brandFull")}
+function toast(msg){const d=document.createElement("div");d.className="toast";d.textContent=msg;document.body.appendChild(d);setTimeout(()=>d.remove(),1800)}
+async function copyText(txt){try{await navigator.clipboard.writeText(txt);toast(t("copied")+" ✓")}catch(e){const ta=document.createElement("textarea");ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand("copy");toast(t("copied")+" ✓")}catch(_){}ta.remove()}}
+function addPoints(n){S.points+=n;S.familyPoints+=n;save()}
+const doneKey=id=>dayNo()+":"+id;
+
+function header(extra=""){
+  return `<header class="hdr">
+    <div class="brand"><img src="${LOGO}" alt=""><div><div class="t">${t("brand")}</div><div class="s">${t("sub")}</div></div></div>
+    ${extra}
+    <button class="iconbtn" data-act="menu" aria-label="Menu">${I.menu}</button>
+    ${menuOpen?menuHTML():""}
+  </header>`;
+}
+function menuHTML(){
+  const u=S.user;
+  return `<div class="menu-back" data-act="menu-close"></div><div class="menu" role="menu">
+    ${u?`<div class="who"><div class="member"><div class="ring" style="width:38px;height:38px">${userPic(u)}</div></div><b>${esc(u.name)}</b></div>`:""}
+    ${u?`<button data-act="history"><span>${t("prev")}</span><span>💬</span></button>`:""}
+    ${aiState==="prompt"||aiState==="denied"?`<button data-act="aiOn"><span>${t("aiOn")}</span><span>✨</span></button>`:""}<button data-act="lang"><span>${t("lang")}</span><span>🌐</span></button>
+    ${u?`<button class="out" data-act="logout"><span>${t("logout")}</span><span>⎋</span></button>`:""}
+  </div>`;
+}
+function nav(){
+  const tabs=[["home","home"],["consult","heart"],["family","fam"],["acts","puzzle"],["me","user"]];
+  return `<nav class="nav">${tabs.map(([k,ic])=>`<button data-go="${k}" class="${screen===k?"on":""}" aria-current="${screen===k?"page":"false"}">${I[ic]}<span>${t(k)}</span></button>`).join("")}</nav>`;
+}
+
+/* ---------- screens ---------- */
+function vSplash(){
+  return `<div class="splash" data-act="skip">
+    <div><img src="${LOGO}" alt="${t("brandFull")}"><h1>${t("brandFull")}</h1><div class="en">${S.lang==="ar"?"Olfa Family":"أُلفة العائلة"}</div></div>
+    <div><div class="tag">${t("tag1")}<br>${t("tag2")}</div><div class="skip">${t("skip")}</div></div></div>`;
+}
+function vLogin(){
+  const c=(m,ic,a,b)=>`<button class="choice" data-reg="${m}"><span class="ic">${I[ic]}</span><span><b>${t(a)}</b><span>${t(b)}</span></span></button>`;
+  return `${header()}<div class="scroll" style="padding-bottom:28px;justify-content:center">
+    <h2 class="h-title" style="text-align:center;font-size:28px">${t("login")}</h2>
+    ${c("family_space","houseHeart","c1","c1s")}${c("individual_path","user","c2","c2s")}${c("family_code","key","c3","c3s")}
+    <p class="quote" style="margin-top:12px">${t("loginQuote")}</p></div>`;
+}
+let reg={name:"",age:"",role:"",pass:"",pass2:"",code:["","","","","",""],avatar:null,photo:null};
+function vRegister(){
+  const title=regMode==="family_space"?t("c1"):regMode==="individual_path"?t("c2"):t("join");
+  return `${header(`<button class="iconbtn" data-act="back" aria-label="Back">${S.lang==="ar"?I.back:`<span style="transform:scaleX(-1);display:grid">${I.back}</span>`}</button>`)}
+  <form class="scroll" id="regForm" style="padding-bottom:28px" novalidate>
+    <div style="text-align:center"><h2 class="h-title" style="font-size:24px">${title}</h2><p class="sub">${t("step")}</p></div>
+    <input class="field" id="r-name" placeholder="${t("name")}" value="${esc(reg.name)}" autocomplete="name">
+    <input class="field" id="r-age" type="number" inputmode="numeric" min="1" max="120" placeholder="${t("age")}" value="${esc(reg.age)}">
+    <input class="field" id="r-role" placeholder="${t("role")}" value="${esc(reg.role)}">
+    <input class="field" id="r-pass" type="password" placeholder="${t("pass")}" value="${esc(reg.pass)}" autocomplete="new-password">
+    ${regMode!=="family_code"?`<input class="field" id="r-pass2" type="password" placeholder="${t("pass2")}" value="${esc(reg.pass2)}" autocomplete="new-password">`:""}
+    ${regMode==="family_code"?`<p class="sub" style="text-align:center;color:var(--rose)">${t("codeHint")}</p>
+      <div class="code">${reg.code.map((d,i)=>`<input id="code-${i}" inputmode="numeric" maxlength="1" value="${esc(d)}" aria-label="digit ${i+1}">`).join("")}</div>`:""}
+    <p class="sec-t" style="text-align:center;margin-top:4px">${t("pickAv")}</p>
+    <div class="avs">
+      <label class="av ${reg.photo?"on":""}"><span class="ring ${reg.photo?"":"plus"}">${reg.photo?`<img src="${reg.photo}" alt="">`:"+"}</span>${t("yourPhoto")}<input type="file" accept="image/*" id="r-photo" hidden></label>
+      ${AV_KINDS.map(k=>`<button type="button" class="av ${reg.avatar===k&&!reg.photo?"on":""}" data-av="${k}"><span class="ring">${avatar(k)}</span>${t("roles")[k]}</button>`).join("")}
+    </div>
+    <p class="err" id="r-err"></p>
+    <button class="btn" type="submit">${t("start")}</button>
+  </form>`;
+}
+function vHome(){
+  const tip=L(TIPS[dayNo()%TIPS.length]);
+  const sg=L(SUGS[(dayNo()+3)%SUGS.length]);
+  return `${header()}<div class="scroll">
+    <div style="text-align:center;padding-top:4px"><h2 class="h-title">${t("hello")} ${esc(S.user?.name||"")} 🤍</h2><p class="sub">${t("helloSub")}</p></div>
+    <button class="mood" data-go="consult"><span class="face">${I.smile}</span><span><b>${t("mood")}</b><span>${t("moodSub")}</span></span><span class="chev">${S.lang==="ar"?"‹":"›"}</span></button>
+    <div class="card"><div class="row between"><span class="pill">${t("tip")}</span><span class="sub">${t("newTomorrow")}</span></div><p class="body" style="font-size:16px">«${tip}»</p></div>
+    <button class="card" data-act="sug" style="text-align:start">
+      <div class="row between"><span class="pill">${t("sug")}</span><span class="sub">⏱ ${sg[2]}</span></div>
+      <h3 style="font-size:18px;font-weight:900;color:var(--rose)">${sg[0]}</h3>
+      <p class="body" id="sugBody" ${sugOpen?"":"hidden"}>${sg[1]}</p>
+      <span class="sub" style="align-self:center">${sugOpen?"▲ "+t("less"):"▼ "+t("more")}</span>
+    </button>
+  </div>${nav()}`;
+}
+let sugOpen=false,openFaq=null;
+function currentChat(){return S.chats.find(c=>c.id===chatId)}
+function vConsult(){
+  const chat=currentChat();
+  const msgs=chat?chat.messages:[];
+  return `${header(msgs.length?`<button class="iconbtn" data-act="newchat" title="${t("newChat")}" aria-label="${t("newChat")}" style="font-size:22px">＋</button>`:"")}<div class="scroll">
+    <div style="text-align:center"><h2 class="h-title">${t("cHi")}</h2><p class="body">${t("cQ")}</p><p class="sub">${t("cSub")}</p></div>
+    ${aiBanner()}<div class="chatbar"><textarea id="chatIn" rows="1" placeholder="${t("cPh")}" aria-label="${t("cPh")}"></textarea><button class="send" data-act="send" aria-label="Send">${I.send}</button></div>
+    <div class="msgs" id="msgs">${msgs.map(m=>`<div class="msg ${m.role==="user"?"me":"ai"}">${esc(m.content)}</div>`).join("")}${thinking?`<div class="msg ai thinking">${t("thinking")}</div>`:""}</div>
+    <h3 class="sec-t" style="margin-top:6px">${t("faqT")}</h3>
+    ${FAQ.map((f,i)=>{const x=L(f);return `<div class="faq ${openFaq===i?"open":""}"><button data-faq="${i}" aria-expanded="${openFaq===i}"><span>${x[0]}</span><i>▼</i></button>${openFaq===i?`<p>${x[1]}</p>`:""}</div>`}).join("")}
+  </div>${nav()}`;
+}
+let actTab="games";
+function weekGames(){return ["wisdom",...pick(Object.keys(QUIZZES),3,weekNo())]}
+function weekChallenges(){return pick(CHALLENGES,4,weekNo()+7)}
+function vActs(){
+  let cards="";
+  if(actTab==="games"){
+    cards=weekGames().map(id=>{
+      if(id==="wisdom"){const dn=S.wisdomDay===dayNo();return `<button class="act" data-play="wisdom">${dn?`<span class="done">${t("done")}</span>`:""}<span class="em">✍️</span><h4>${t("wisdomT")}</h4><small>✨ AI</small><span class="foot">${t("wisdomD")}</span></button>`}
+      const q=QUIZZES[id];const dn=S.done[doneKey(id)];
+      return `<button class="act" data-play="${id}">${dn?`<span class="done">${t("done")}</span>`:""}<span class="em">${q.em}</span><h4>${L(q.t)}</h4><small>${q.q.length} × 5 ${t("pts")}</small><span class="foot">${L(q.d)}</span></button>`}).join("");
+  }else{
+    cards=weekChallenges().map(c=>{const dn=S.done[doneKey(c.id)];return `<button class="act" data-ch="${c.id}">${dn?`<span class="done">${t("done")}</span>`:""}<span class="em">${c.em}</span><h4>${L(c.t)}</h4><small>+10 ${t("pts")}</small><span class="foot">${L(c.d)}</span></button>`}).join("");
+  }
+  return `${header()}<div class="scroll">
+    <div class="weekbar"><h2 class="sec-t" style="font-size:18px">${t("week")}</h2><span>🔄 ${t("renew")}</span></div>
+    <div class="tabs" role="tablist"><button data-tab="games" class="${actTab==="games"?"on":""}">${t("games")}</button><button data-tab="challenges" class="${actTab==="challenges"?"on":""}">${t("challenges")}</button></div>
+    <div class="grid2">${cards}</div>
+    <div class="stat"><span>${t("myPts")}</span><b>${S.points}</b></div>
+  </div>${nav()}`;
+}
+function vFamily(){
+  const u=S.user;
+  if(u.mode==="individual_path"){
+    return `${header()}<div class="scroll"><div class="card" style="text-align:center;gap:14px;padding:22px"><span style="font-size:40px">🏡</span><p class="body">${t("indiv")}</p>
+      <button class="btn rose" data-act="toFam">${t("makeFam")}</button><button class="btn soft" data-act="toJoin">${t("joinFam")}</button></div>
+      <p class="quote">${t("famQuote")}</p></div>${nav()}`;
+  }
+  const rep=S.report&&S.report.week===weekNo()&&S.report.lang===S.lang?S.report.text:null;
+  return `${header()}<div class="scroll">
+    <div class="card"><h3 class="sec-t">${t("famCode")}</h3><div class="row between" style="flex-wrap:wrap">
+      <div class="digits">${u.code.split("").map(d=>`<span>${d}</span>`).join("")}</div>
+      <button class="copy" data-act="sharecode">${I.copy} ${t("share")}</button></div></div>
+    <div><h3 class="sec-t" style="margin-bottom:8px">${t("members")}</h3>
+      <div class="members"><div class="member"><div class="ring">${userPic(u)}</div><span>${esc(u.name)} (${t("you")})</span></div></div></div>
+    <div class="stat"><span>${t("famPts")}</span><b>${S.familyPoints}</b></div>
+    <div class="card"><h3 class="sec-t">📈 ${t("report")}</h3><p class="body" id="report">${rep?esc(rep):`<span class="thinking">${t("reportLoading")}</span>`}</p></div>
+    <p class="quote">${t("famQuote")}</p>
+  </div>${nav()}`;
+}
+function vMe(){
+  const u=S.user;
+  return `${header()}<div class="scroll">
+    <div class="profile-top"><div class="ring">${userPic(u)}</div><div><h2 class="h-title">${esc(u.name)}</h2><p class="sub">${u.age?esc(u.age)+" "+t("years")+" — ":""}${esc(u.role||t("member"))}</p></div></div>
+    <div class="stat"><span>${t("myPts")}</span><b>${S.points}</b></div>
+    <div><h3 class="sec-t">${t("forYou")}</h3><p class="sub">${t("phrasesT")}:</p></div>
+    ${PHRASES.map((p,i)=>{const x=L(p);return `<div class="phrase"><div class="top"><b>${x[0]}</b><button class="copy" data-copy="${i}">${I.copy} ${t("copy")}</button></div><p>${x[1]}</p></div>`}).join("")}
+  </div>${nav()}`;
+}
+
+function render(){
+  applyLang();
+  const views={splash:vSplash,login:vLogin,register:vRegister,home:vHome,consult:vConsult,acts:vActs,family:vFamily,me:vMe};
+  app.innerHTML=`<div class="screen">${views[screen]()}</div>`+(sheetHTML?`<div class="sheet-back" data-act="sheet-close"><div class="sheet" role="dialog" aria-modal="true">${sheetHTML}</div></div>`:"");
+  after();
+}
+function go(s){screen=s;menuOpen=false;render();$(".scroll")?.scrollTo(0,0)}
+
+/* ---------- sheet (modal) ---------- */
+let sheetHTML="",sheetCtx=null;
+function openSheet(html,ctx){sheetHTML=html;sheetCtx=ctx||null;render()}
+function closeSheet(){sheetHTML="";sheetCtx=null;render()}
+function sheetHead(title){return `<div class="row between"><h3 class="h-title" style="font-size:18px">${title}</h3><button class="copy" data-act="sheet-x">${t("close")} ×</button></div>`}
+
+function playQuiz(id){
+  const q=QUIZZES[id];let i=0,score=0,picked=null;
+  const draw=()=>{
+    if(i>=q.q.length){
+      const earned=score*5;const first=!S.done[doneKey(id)];
+      if(first){S.done[doneKey(id)]=true;addPoints(earned)}
+      openSheet(`${sheetHead(L(q.t))}<div class="card" style="text-align:center;align-items:center"><span style="font-size:44px">🎉</span><p class="body">${t("result")}: ${score} / ${q.q.length} ${t("correct")}</p><p class="h-title">${first?`${t("earned")} ${earned} ${t("pts")}`:t("done")}</p></div><button class="btn" data-act="sheet-x">${t("close")}</button>`);
+      return;
+    }
+    const x=L(q.q[i]);const a=q.q[i].a;
+    openSheet(`${sheetHead(L(q.t))}<div class="prog"><i style="width:${(i/q.q.length)*100}%"></i></div><p class="sub">${t("qOf")} ${i+1} / ${q.q.length}</p><p class="body" style="font-size:18px">${x[0]}</p>
+      <div class="opts">${x[1].map((o,j)=>`<button class="opt ${picked!==null?(j===a?"right":j===picked?"wrong":""):""}" data-opt="${j}" ${picked!==null?"disabled":""}>${o}</button>`).join("")}</div>
+      ${picked!==null?`<button class="btn" data-act="qnext">${i===q.q.length-1?t("finish"):t("next")}</button>`:""}`,{type:"quiz",pick:j=>{if(picked!==null)return;picked=j;if(j===a)score++;draw()},next:()=>{i++;picked=null;draw()}});
+  };
+  draw();
+}
+function playWisdom(){
+  if(S.wisdomDay===dayNo()){openSheet(`${sheetHead(t("wisdomT"))}<div class="card" style="text-align:center"><span style="font-size:40px">🌟</span><p class="body">${t("wisdomDone")}</p></div>`);return}
+  openSheet(`${sheetHead(t("wisdomT"))}<p class="body">${t("wisdomHelp")}</p>
+    <textarea class="field" id="wIn" rows="4" placeholder="${t("wisdomPh")}" style="resize:vertical"></textarea>
+    <p class="err" id="wErr"></p><div id="wOut"></div>
+    <button class="btn rose" data-act="wEval" id="wBtn">${t("evaluate")}</button>`,{type:"wisdom"});
+}
+async function evalWisdom(){
+  const ta=$("#wIn"),err=$("#wErr"),out=$("#wOut"),btn=$("#wBtn");
+  const txt=ta.value.trim();
+  if(txt.length<10){err.textContent=t("wisdomMin");ta.focus();return}
+  err.textContent="";btn.disabled=true;ta.disabled=true;out.innerHTML=`<p class="thinking">${t("evaluating")}</p>`;
+  let feedback,points=20;
+  try{
+    const s=await getSample();let r;
+    if(!s){const raw=await serverAI("wisdom",{text:txt.slice(0,600)});const m=raw.match(/\{[\s\S]*\}/);r=JSON.parse(m?m[0]:raw)}
+    else r=await s.json(`You are the warm judge in "Olfa", a family-bonding app. A family member wrote this saying/wisdom:\n"""${txt.slice(0,600)}"""\nReply with only JSON: {"feedback": string, "points": number}. feedback: 1-2 short, warm sentences in ${S.lang==="ar"?"simple Arabic (Saudi-friendly)":"simple English"} about the saying. points: an integer 15-30 based on how meaningful and kind it is. If the text is not a real saying or is unkind, give 5 points and gently encourage a better one.`,{modelTier:"quick",cache:false});
+    feedback=String(r.feedback||"");points=Math.max(5,Math.min(30,parseInt(r.points)||20));
+  }catch(e){
+    feedback=S.lang==="ar"?"حكمة جميلة تقرّب القلوب، شكراً لمشاركتك!":"A lovely saying that brings hearts closer. Thanks for sharing!";points=20;
+  }
+  S.wisdomDay=dayNo();addPoints(points);
+  out.innerHTML=`<div class="card"><p class="body">${esc(feedback)}</p><p class="h-title">+${points} ${t("pts")}</p></div>`;
+  btn.textContent=t("close");btn.disabled=false;btn.dataset.act="sheet-x";
+}
+function openChallenge(id){
+  const c=CHALLENGES.find(x=>x.id===id);const dn=S.done[doneKey(id)];
+  openSheet(`${sheetHead(c.em+" "+L(c.t))}<div class="card"><h4 class="sec-t">${t("chHow")}</h4><p class="body">${L(c.h)}</p></div>
+    ${dn?`<div class="card" style="text-align:center"><p class="body">✅ ${t("chDone")}</p></div>`:`<button class="btn rose" data-act="chDo" data-id="${id}">${t("chDo")} (+10 ${t("pts")})</button>`}`);
+}
+function openHistory(){
+  const list=S.chats.filter(c=>c.messages.length).slice().reverse();
+  openSheet(`${sheetHead(t("prev"))}${list.length?list.map(c=>`<button class="hist" data-chat="${c.id}"><b>${esc(c.messages[0].content.slice(0,60))}</b><small>${new Date(c.at).toLocaleDateString(S.lang==="ar"?"ar-SA":"en-GB")}</small></button>`).join(""):`<p class="sub">${t("noChats")}</p>`}`);
+}
+
+/* ---------- chat ---------- */
+const RULES=()=>`You are "Olfa" (أُلفة), a warm family-guidance helper inside the Olfa Family app. Reply in ${S.lang==="ar"?"simple, warm Arabic (Saudi-friendly, easy to read)":"simple, warm English"}. Keep replies short for a phone screen (3-6 sentences or a few short points). Listen first, validate feelings, then give 1-3 gentle practical steps rooted in kindness, respect between family members and good Islamic and Saudi family values. Never judge or blame. The person may be a teenager or a parent. If the person mentions being hurt, abuse, wanting to harm themselves or others, or being in danger, gently urge them to talk now to a trusted adult and to call 911 (Saudi emergency) if in immediate danger. You are not a doctor or therapist; for serious or ongoing issues suggest a family counselor.`;
+async function sendChat(){
+  const ta=$("#chatIn");const txt=ta.value.trim();if(!txt||thinking)return;
+  let chat=currentChat();
+  if(!chat){chat={id:Date.now().toString(36),at:Date.now(),messages:[]};S.chats.push(chat);chatId=chat.id}
+  chat.messages.push({role:"user",content:txt});save();
+  thinking=true;render();
+  const s=await getSample();
+  if(!s){
+    if(hasServer()){
+      try{chat.messages.push({role:"assistant",content:(await serverAI("chat",{messages:chat.messages.slice(-12)})).trim()})}
+      catch(e){chat.messages.push({role:"assistant",content:t("aiErr")})}
+    }else chat.messages.push({role:"assistant",content:t("aiOutside")});
+    thinking=false;save();render();$("#msgs")?.lastElementChild?.scrollIntoView({block:"nearest"});if(!hasServer())refreshAi();return}
+  let bubble=null;
+  try{
+    const turns=[{role:"user",content:RULES()},...chat.messages.slice(-12)];
+    const r=await s(turns,{cache:false,modelTier:"quick",onText:({text})=>{if(!bubble){bubble=$("#msgs .thinking");if(bubble)bubble.classList.remove("thinking")}if(bubble)bubble.textContent=text}});
+    chat.messages.push({role:"assistant",content:r.text.trim()});
+  }catch(e){
+    if(["not_granted","sampling_disabled","not_declared","capability_disabled","capability_removed"].includes(e?.code)){chat.messages.push({role:"assistant",content:t("aiDenied")});refreshAi()}
+    else chat.messages.push({role:"assistant",content:e?.text||t("aiErr")});
+  }
+  thinking=false;save();render();
+  const m=$("#msgs");m?.lastElementChild?.scrollIntoView({block:"nearest"});
+}
+
+/* ---------- weekly report ---------- */
+let reportBusy=false;
+async function ensureReport(){
+  if(screen!=="family"||S.user?.mode==="individual_path"||reportBusy)return;
+  if(S.report&&S.report.week===weekNo()&&S.report.lang===S.lang)return;
+  reportBusy=true;
+  const wk=weekNo();const daysDone=Object.keys(S.done).filter(k=>Math.floor((+k.split(":")[0]+4)/7)===wk);
+  const chatsWeek=S.chats.filter(c=>Math.floor((Math.floor((c.at+3*3600e3)/86400e3)+4)/7)===wk).length;
+  const stats=`Family points: ${S.familyPoints}. Activities and challenges completed this week: ${daysDone.length}. Support chats opened this week: ${chatsWeek}. Wisdom game played this week: ${S.wisdomDay&&Math.floor((S.wisdomDay+4)/7)===wk?"yes":"no"}.`;
+  let text;
+  try{
+    const s=await getSample();
+    if(!s)text=(await serverAI("report",{text:stats})).trim();
+    else text=(await s(`Write the weekly family report for the "Olfa" family app in ${S.lang==="ar"?"warm, simple Arabic":"warm, simple English"}. 2-3 short sentences, no headings, no lists. Base it only on these numbers, celebrate effort, and end with one gentle, specific idea for the coming week. Never mention private chat content.\n${stats}`,{modelTier:"quick",cache:{gcTime:86400000}})).text.trim();
+  }catch(e){
+    text=S.lang==="ar"?`أسبوع جميل بإذن الله. أنجزتم ${daysDone.length} من الأنشطة والتحديات، ورصيد العائلة ${S.familyPoints} نقطة. جرّبوا هذا الأسبوع جلسة إنصات قصيرة بدون جوالات.`:`A lovely week. You completed ${daysDone.length} activities and challenges, and your family has ${S.familyPoints} points. This week, try a short phone-free listening time together.`;
+  }
+  S.report={week:wk,lang:S.lang,text};save();reportBusy=false;
+  const el=$("#report");if(el)el.textContent=text;
+}
+
+/* ---------- events ---------- */
+function after(){
+  if(screen==="register"){
+    const bind=(id,k)=>{const el=$("#"+id);el&&el.addEventListener("input",()=>reg[k]=el.value)};
+    bind("r-name","name");bind("r-age","age");bind("r-role","role");bind("r-pass","pass");bind("r-pass2","pass2");
+    reg.code.forEach((_,i)=>{const el=$("#code-"+i);if(!el)return;
+      el.addEventListener("input",()=>{el.value=el.value.replace(/\D/g,"").slice(-1);reg.code[i]=el.value;if(el.value&&i<5)$("#code-"+(i+1)).focus()});
+      el.addEventListener("keydown",e=>{if(e.key==="Backspace"&&!el.value&&i>0)$("#code-"+(i-1)).focus()});
+      el.addEventListener("paste",e=>{const d=(e.clipboardData.getData("text")||"").replace(/\D/g,"").slice(0,6);if(d.length){e.preventDefault();d.split("").forEach((c,j)=>{reg.code[j]=c;$("#code-"+j).value=c});$("#code-"+Math.min(d.length,5)).focus()}})});
+    $("#r-photo")?.addEventListener("change",e=>{const f=e.target.files[0];if(!f)return;const fr=new FileReader();fr.onload=()=>{const img=new Image();img.onload=()=>{const c=document.createElement("canvas");c.width=c.height=160;const g=c.getContext("2d");const m=Math.min(img.width,img.height);g.drawImage(img,(img.width-m)/2,(img.height-m)/2,m,m,0,0,160,160);reg.photo=c.toDataURL("image/jpeg",.8);render()};img.src=fr.result};fr.readAsDataURL(f)});
+    $("#regForm").addEventListener("submit",e=>{e.preventDefault();
+      const err=$("#r-err");
+      if(!reg.name.trim()){err.textContent=t("eName");return}
+      if(reg.pass.length<4){err.textContent=t("ePass");return}
+      if(regMode!=="family_code"&&reg.pass!==reg.pass2){err.textContent=t("eMatch");return}
+      if(regMode==="family_code"&&reg.code.join("").length!==6){err.textContent=t("eCode");return}
+      const code=regMode==="family_code"?reg.code.join(""):regMode==="family_space"?String(Math.floor(100000+Math.random()*900000)):"";
+      S.user={name:reg.name.trim(),age:reg.age,role:reg.role.trim()||(reg.avatar?T[S.lang].roles[reg.avatar]:""),avatar:reg.avatar||"son",photo:reg.photo,mode:regMode,code};
+      if(!S.points){S.points=10;S.familyPoints=10}
+      save();go("home");
+    });
+  }
+  if(screen==="consult"){const ta=$("#chatIn");ta?.addEventListener("keydown",e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();sendChat()}});ta?.addEventListener("input",()=>{ta.style.height="auto";ta.style.height=ta.scrollHeight+"px"})}
+  if(screen==="family")ensureReport();
+}
+app.addEventListener("click",e=>{
+  const el=e.target.closest("[data-act],[data-go],[data-reg],[data-av],[data-faq],[data-tab],[data-play],[data-ch],[data-opt],[data-copy],[data-chat]");
+  if(!el){return}
+  const d=el.dataset;
+  if(d.act==="sheet-close"&&e.target!==el)return; // clicks inside the sheet
+  if(d.go){if(!S.user)return;go(d.go);return}
+  if(d.reg){regMode=d.reg;reg={name:S.user?.name||"",age:S.user?.age||"",role:S.user?.role||"",pass:"",pass2:"",code:["","","","","",""],avatar:S.user?.avatar||null,photo:S.user?.photo||null};go("register");return}
+  if(d.av){reg.avatar=d.av;reg.photo=null;if(!reg.role||Object.values(T.ar.roles).concat(Object.values(T.en.roles)).includes(reg.role))reg.role=t("roles")[d.av];render();return}
+  if(d.faq!==undefined){openFaq=openFaq===+d.faq?null:+d.faq;render();return}
+  if(d.tab){actTab=d.tab;render();return}
+  if(d.play){d.play==="wisdom"?playWisdom():playQuiz(d.play);return}
+  if(d.ch){openChallenge(d.ch);return}
+  if(d.opt!==undefined){sheetCtx?.pick(+d.opt);return}
+  if(d.copy!==undefined){copyText(L(PHRASES[+d.copy])[1]);return}
+  if(d.chat){chatId=d.chat;sheetHTML="";go("consult");return}
+  switch(d.act){
+    case "skip":clearTimeout(splashTimer);go(S.user?"home":"login");break;
+    case "menu":menuOpen=!menuOpen;render();break;
+    case "menu-close":menuOpen=false;render();break;
+    case "lang":S.lang=S.lang==="ar"?"en":"ar";menuOpen=false;save();render();break;
+    case "logout":S.user=null;chatId=null;menuOpen=false;save();go("login");break;
+    case "history":menuOpen=false;openHistory();break;
+    case "back":go("login");break;
+    case "sug":sugOpen=!sugOpen;render();break;
+    case "send":sendChat();break;
+    case "aiOn":menuOpen=false;turnOnAi();break;
+    case "newchat":chatId=null;render();$("#chatIn")?.focus();break;
+    case "sheet-close":case "sheet-x":closeSheet();break;
+    case "qnext":sheetCtx?.next();break;
+    case "wEval":evalWisdom();break;
+    case "chDo":S.done[doneKey(d.id)]=true;addPoints(10);openChallenge(d.id);break;
+    case "sharecode":copyText((S.lang==="ar"?"انضم لعائلتي في تطبيق أُلفة بهذا الكود: ":"Join my family on the Olfa app with this code: ")+S.user.code);break;
+    case "toFam":case "toJoin":regMode=d.act==="toFam"?"family_space":"family_code";reg={name:S.user.name,age:S.user.age,role:S.user.role,pass:"",pass2:"",code:["","","","","",""],avatar:S.user.avatar,photo:S.user.photo};go("register");break;
+  }
+});
+
+/* ---------- boot ---------- */
+render();
+refreshAi();
+const splashTimer=setTimeout(()=>{if(screen==="splash")go(S.user?"home":"login")},8000);
+})();
+</script>
+
+</body>
+</html>
