@@ -386,7 +386,7 @@ smile:`<svg viewBox="0 0 40 40"><defs><radialGradient id="mf" cx="38%" cy="30%" 
 /* ---------- AI ----------
    داخل Claude: يستخدم Claude مباشرة.
    على GitHub أو أي موقع ثاني: يستخدم سيرفرك (Cloudflare Worker). حطي رابطه هنا: */
-const AI_URL="https://olfa-ai.b-m-abushal.workers.dev/";
+const AI_URL="https://olfa-ai.aljouriabushal.workers.dev/";
 async function serverAI(task,payload){
   if(!AI_URL||AI_URL.startsWith("__"))throw{code:"none"};
   const r=await fetch(AI_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({task,lang:S.lang,...payload})});
