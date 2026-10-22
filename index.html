@@ -32,15 +32,15 @@ body{margin:0;background:var(--page);color:var(--ink);font-family:var(--font);fo
 button,input,textarea{font-family:inherit;font-weight:800;color:inherit}
 button{cursor:pointer;border:0;background:none}
 :focus-visible{outline:3px solid var(--rose);outline-offset:2px}
-#app{max-width:440px;margin:0 auto;height:100%;overflow:hidden;background:var(--bg);position:relative;display:flex;flex-direction:column}
-@media (min-width:520px){#app{height:calc(100% - 32px);margin-block:16px;border-radius:32px;box-shadow:0 20px 60px rgba(90,40,50,.15)}.nav{bottom:16px!important;border-radius:0 0 32px 32px}}
-.screen{flex:1;display:flex;flex-direction:column;min-height:0;overflow:hidden}
-.scroll{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:12px 18px calc(110px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:14px}
+#app{max-width:440px;margin:0 auto;min-height:100%;background:var(--bg);position:relative;display:flex;flex-direction:column}
+@media (min-width:520px){#app{min-height:calc(100% - 32px);margin-block:16px;border-radius:32px;box-shadow:0 20px 60px rgba(90,40,50,.15);overflow:hidden}}
+.screen{flex:1;display:flex;flex-direction:column;min-height:0}
+.scroll{flex:1;overflow-y:auto;padding:12px 18px 96px;display:flex;flex-direction:column;gap:14px}
 h1,h2,h3,h4,p{margin:0}
 h2,h3{text-wrap:balance}
 
 /* Header */
-.hdr{position:relative;flex:none;z-index:20;background:var(--bg);border-bottom:2px solid var(--line);padding:10px 18px;display:flex;align-items:center;gap:10px}
+.hdr{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:2px solid var(--line);padding:10px 18px;display:flex;align-items:center;gap:10px}
 .hdr .brand{display:flex;align-items:center;gap:10px;flex:1;min-width:0}
 .hdr img{width:40px;height:40px;border-radius:12px}
 .hdr .t{font-size:20px;font-weight:900;color:var(--rose);line-height:1.1}
@@ -59,7 +59,7 @@ h2,h3{text-wrap:balance}
 .menu .out{color:var(--danger)}
 
 /* Bottom nav */
-.nav{position:fixed;bottom:0;left:0;right:0;max-width:440px;margin:0 auto;z-index:50;background:var(--bg);border-top:2px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr);padding:6px 4px calc(8px + env(safe-area-inset-bottom,0px))}
+.nav{position:absolute;bottom:0;inset-inline:0;z-index:15;background:var(--bg);border-top:2px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr);padding:6px 4px calc(8px + env(safe-area-inset-bottom,0px))}
 .nav button{display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 0;color:var(--muted);font-size:11px;font-weight:800;border-radius:12px}
 .nav button svg{width:24px;height:24px}
 .nav button.on{color:var(--rose)}
@@ -81,7 +81,7 @@ h2,h3{text-wrap:balance}
 .field:focus{border-color:var(--rose)}
 .field::placeholder{color:var(--muted);opacity:.8}
 .err{color:var(--danger);font-size:13px;font-weight:800;min-height:1em}
-.toast{position:fixed;bottom:110px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--on-ink);padding:10px 18px;border-radius:999px;font-size:14px;font-weight:800;z-index:90;max-width:90vw;text-align:center}
+.toast{position:fixed;bottom:96px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--on-ink);padding:10px 18px;border-radius:999px;font-size:14px;font-weight:800;z-index:90;max-width:90vw;text-align:center}
 
 /* Splash */
 .splash{flex:1;display:flex;flex-direction:column;justify-content:space-between;align-items:center;padding:20vh 24px 12vh;text-align:center;gap:24px;cursor:pointer}
@@ -183,6 +183,15 @@ h2,h3{text-wrap:balance}
 .profile-top .ring svg,.profile-top .ring img{width:100%;height:100%;object-fit:cover}
 .thinking{color:var(--rose);font-size:13px;animation:pulse 1.2s infinite}
 @keyframes pulse{50%{opacity:.4}}
+.linkbtn{color:var(--rose);font-weight:900;text-decoration:underline;padding:2px 4px;font-size:inherit}
+.center{text-align:center}
+.member{position:relative}
+.member .ring{border:3px solid transparent}
+.member.on .ring{border-color:var(--ok)}
+.member.off .ring{opacity:.6}
+.member .dot{position:absolute;top:2px;inset-inline-end:2px;width:14px;height:14px;border-radius:50%;background:var(--ok);border:2px solid var(--bg)}
+.member small{font-size:10px;color:var(--muted)}
+.member.on small{color:var(--ok)}
 .hist{background:var(--blush);border-radius:16px;padding:12px 14px;text-align:start;display:flex;flex-direction:column;gap:2px}
 .hist small{color:var(--muted);font-size:12px}
 </style>
@@ -197,7 +206,7 @@ const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&
 
 /* ---------- storage ---------- */
 const KEY="olfa_app_v1";
-let S={lang:"ar",user:null,points:0,familyPoints:0,done:{},chats:[],report:null,wisdomDay:null};
+let S={lang:"ar",user:null,token:null,accounts:{},members:null,points:0,familyPoints:0,done:{},chats:[],report:null,wisdomDay:null};
 try{const raw=localStorage.getItem(KEY);if(raw)S=Object.assign(S,JSON.parse(raw))}catch(e){}
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
 
@@ -209,7 +218,7 @@ const pick=(arr,n,seed)=>{const a=arr.slice();let x=seed*9301+49297;for(let i=a.
 /* ---------- text ---------- */
 const T={
 ar:{brand:"أُلفة",brandFull:"أُلفة العائلة",sub:"واحة التفاهم الأسري",tag1:"نقرب القلوب... ونبني",tag2:"تَفاهماً يدوم",skip:"اضغط للمتابعة",
-login:"تسجيل الدخول",c1:"أنشئ مساحة عائلتك",c1s:"أنشئ حساب عائلتك واحصل على كود الدعوة",c2:"الأفراد",c2s:"أنشئ حسابك الخاص المستقل",c3:"هل لديك كود العائلة؟",c3s:"أدخل الكود وانضم إلى مساحة عائلتك الخاصة",loginQuote:"«الحل لا يكون في تحديد المخطئ، بل في فهم بعضنا بعضًا بشكلٍ أفضل»",
+login:"تسجيل جديد",haveAcc:"هل لديك حساب؟",signIn:"تسجيل الدخول",newUser:"مستخدم جديد؟",createAcc:"إنشاء حساب جديد",welcomeBack:"العودة إلى أُلفة",wbSub:"اكتب اسم المستخدم وكلمة السر",username:"اسم المستخدم (حروف إنجليزية أو أرقام)",signBtn:"دخول",eUser:"اسم المستخدم لازم يكون من 3 إلى 20 حرف إنجليزي أو رقم",eTaken:"اسم المستخدم مأخوذ، اختر اسم ثاني",eBadCode:"كود العائلة غير صحيح، تأكد منه",eWrong:"اسم المستخدم أو كلمة السر غير صحيحة",eNet:"تعذر الاتصال، حاول مرة ثانية",eDb:"قاعدة البيانات غير مربوطة في السيرفر",online:"متصل الآن",seen:"آخر ظهور منذ",mins:"دقيقة",hrs:"ساعة",days:"يوم",loadingFam:"جاري تحميل أفراد العائلة...",localOnly:"أفراد العائلة يظهرون هنا لما تفتحون التطبيق من موقعه على الإنترنت.",needAccount:"سجّل خروج وأنشئ حسابك من جديد عشان يظهر لك أفراد عائلتك.",shareHint:"شارك الكود عشان ينضم أفراد عائلتك ويظهرون هنا.",makeFamQ:"راح ننشئ لك مساحة عائلة وكود تشاركه مع أهلك.",create:"أنشئ",joinBtn:"انضم",codeLabel:"كود العائلة (6 أرقام)",famCreated:"تم إنشاء مساحة العائلة",joined:"تم الانضمام للعائلة",signedOut:"انتهت الجلسة، سجّل دخولك مرة ثانية",c1:"أنشئ مساحة عائلتك",c1s:"أنشئ حساب عائلتك واحصل على كود الدعوة",c2:"الأفراد",c2s:"أنشئ حسابك الخاص المستقل",c3:"هل لديك كود العائلة؟",c3s:"أدخل الكود وانضم إلى مساحة عائلتك الخاصة",loginQuote:"«الحل لا يكون في تحديد المخطئ، بل في فهم بعضنا بعضًا بشكلٍ أفضل»",
 join:"انضم إلى عائلتك",step:"“خطوة صغيرة تعيد القرب”",name:"اسمك",age:"عمرك",role:"صفة الفرد في العائلة",pass:"كلمة السر",pass2:"تأكيد كلمة السر",codeHint:"أدخل الكود المكون من 6 أرقام الذي أرسله لك مشرف العائلة",pickAv:"اختر صورتك الشخصية حسب صفتك في العائلة",yourPhoto:"صورتك",start:"«ابدأ رحلة الألفة»",
 eName:"اكتب اسمك",ePass:"كلمة السر لازم تكون 4 أحرف أو أكثر",eMatch:"كلمتا السر غير متطابقتين",eCode:"أدخل الكود كامل (6 أرقام)",
 home:"الرئيسية",consult:"الاستشارات",family:"حالة العائلة",acts:"الأنشطة",me:"ملفي",
@@ -224,7 +233,7 @@ myPts:"نقاطي",member:"عضو فعّال",years:"سنة",forYou:"لك...",ph
 prev:"محادثاتي السابقة",lang:"English",logout:"تسجيل الخروج",noChats:"ما عندك محادثات سابقة.",open:"فتح",
 roles:{father:"الأب",mother:"الأم",son:"الابن",daughter:"الابنة",grandpa:"الجد",grandma:"الجدة"}},
 en:{brand:"Olfa",brandFull:"Olfa Family",sub:"A home for family understanding",tag1:"Bringing hearts closer,",tag2:"building lasting understanding",skip:"Tap to continue",
-login:"Sign in",c1:"Create your family space",c1s:"Set up your family account and get an invite code",c2:"Individuals",c2s:"Create your own personal account",c3:"Have a family code?",c3s:"Enter the code to join your family's space",loginQuote:"“The answer isn't finding who's wrong, it's understanding each other better.”",
+login:"New account",haveAcc:"Already have an account?",signIn:"Sign in",newUser:"New here?",createAcc:"Create an account",welcomeBack:"Welcome back to Olfa",wbSub:"Enter your username and password",username:"Username (English letters or numbers)",signBtn:"Sign in",eUser:"Username must be 3–20 English letters or numbers",eTaken:"That username is taken, pick another",eBadCode:"That family code isn't right, check it",eWrong:"Wrong username or password",eNet:"Couldn't connect, try again",eDb:"The database isn't connected on the server",online:"Online now",seen:"Last seen",mins:"min ago",hrs:"h ago",days:"d ago",loadingFam:"Loading family members...",localOnly:"Family members show here when you open the app from its website.",needAccount:"Sign out and create your account again to see your family members.",shareHint:"Share the code so your family can join and show up here.",makeFamQ:"We'll create a family space and a code to share with your family.",create:"Create",joinBtn:"Join",codeLabel:"Family code (6 digits)",famCreated:"Family space created",joined:"You joined the family",signedOut:"Your session ended, please sign in again",c1:"Create your family space",c1s:"Set up your family account and get an invite code",c2:"Individuals",c2s:"Create your own personal account",c3:"Have a family code?",c3s:"Enter the code to join your family's space",loginQuote:"“The answer isn't finding who's wrong, it's understanding each other better.”",
 join:"Join your family",step:"“A small step that brings us closer”",name:"Your name",age:"Your age",role:"Your role in the family",pass:"Password",pass2:"Confirm password",codeHint:"Enter the 6-digit code your family admin sent you",pickAv:"Pick a picture for your role in the family",yourPhoto:"Your photo",start:"Start the Olfa journey",
 eName:"Enter your name",ePass:"Password must be at least 4 characters",eMatch:"Passwords don't match",eCode:"Enter the full 6-digit code",
 home:"Home",consult:"Support",family:"Family",acts:"Activities",me:"Profile",
@@ -386,6 +395,15 @@ async function serverAI(task,payload){
   return d.text;
 }
 const hasServer=()=>!!AI_URL&&!AI_URL.startsWith("__");
+async function api(action,payload){
+  if(!hasServer())throw{code:"none"};
+  let r;try{r=await fetch(AI_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({action,...payload})})}catch(e){throw{code:"net"}}
+  const d=await r.json().catch(()=>({}));
+  if(!r.ok)throw{code:d.error||"net"};
+  return d;
+}
+const errText=e=>({bad_username:t("eUser"),username_taken:t("eTaken"),bad_code:t("eBadCode"),wrong_login:t("eWrong"),bad_password:t("ePass"),no_database:t("eDb")}[e?.code]||t("eNet"));
+async function sha(txt){try{const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(txt));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("")}catch(e){return "p:"+txt.length+":"+[...txt].reduce((h,c)=>(h*31+c.charCodeAt(0))|0,7)}}
 let samplePromise=null;
 const getSample=()=>samplePromise??=(window.claude?.use?window.claude.use("sample").catch(()=>null):Promise.resolve(null));
 let aiBlocked=false;
@@ -448,15 +466,29 @@ function vLogin(){
   return `${header()}<div class="scroll" style="padding-bottom:28px;justify-content:center">
     <h2 class="h-title" style="text-align:center;font-size:28px">${t("login")}</h2>
     ${c("family_space","houseHeart","c1","c1s")}${c("individual_path","user","c2","c2s")}${c("family_code","key","c3","c3s")}
-    <p class="quote" style="margin-top:12px">${t("loginQuote")}</p></div>`;
+    <p class="sub center" style="font-size:14px">${t("haveAcc")} <button class="linkbtn" data-act="toSignin">${t("signIn")}</button></p>
+    <p class="quote" style="margin-top:4px">${t("loginQuote")}</p></div>`;
 }
-let reg={name:"",age:"",role:"",pass:"",pass2:"",code:["","","","","",""],avatar:null,photo:null};
+let sign={username:"",pass:""};
+function vSignin(){
+  return `${header(`<button class="iconbtn" data-act="back" aria-label="Back">${S.lang==="ar"?I.back:`<span style="transform:scaleX(-1);display:grid">${I.back}</span>`}</button>`)}
+  <form class="scroll" id="signForm" style="padding-bottom:28px;justify-content:center" novalidate>
+    <div class="center"><h2 class="h-title" style="font-size:26px">${t("welcomeBack")}</h2><p class="sub">${t("wbSub")}</p></div>
+    <input class="field" id="s-user" dir="ltr" autocapitalize="none" autocomplete="username" placeholder="${t("username")}" value="${esc(sign.username)}">
+    <input class="field" id="s-pass" type="password" autocomplete="current-password" placeholder="${t("pass")}" value="${esc(sign.pass)}">
+    <p class="err" id="s-err"></p>
+    <button class="btn" type="submit" id="s-btn">${t("signBtn")}</button>
+    <p class="sub center" style="font-size:14px">${t("newUser")} <button type="button" class="linkbtn" data-act="back">${t("createAcc")}</button></p>
+  </form>`;
+}
+let reg={name:"",username:"",age:"",role:"",pass:"",pass2:"",code:["","","","","",""],avatar:null,photo:null};
 function vRegister(){
   const title=regMode==="family_space"?t("c1"):regMode==="individual_path"?t("c2"):t("join");
   return `${header(`<button class="iconbtn" data-act="back" aria-label="Back">${S.lang==="ar"?I.back:`<span style="transform:scaleX(-1);display:grid">${I.back}</span>`}</button>`)}
   <form class="scroll" id="regForm" style="padding-bottom:28px" novalidate>
     <div style="text-align:center"><h2 class="h-title" style="font-size:24px">${title}</h2><p class="sub">${t("step")}</p></div>
     <input class="field" id="r-name" placeholder="${t("name")}" value="${esc(reg.name)}" autocomplete="name">
+    <input class="field" id="r-user" dir="ltr" autocapitalize="none" autocomplete="username" placeholder="${t("username")}" value="${esc(reg.username)}">
     <input class="field" id="r-age" type="number" inputmode="numeric" min="1" max="120" placeholder="${t("age")}" value="${esc(reg.age)}">
     <input class="field" id="r-role" placeholder="${t("role")}" value="${esc(reg.role)}">
     <input class="field" id="r-pass" type="password" placeholder="${t("pass")}" value="${esc(reg.pass)}" autocomplete="new-password">
@@ -469,7 +501,7 @@ function vRegister(){
       ${AV_KINDS.map(k=>`<button type="button" class="av ${reg.avatar===k&&!reg.photo?"on":""}" data-av="${k}"><span class="ring">${avatar(k)}</span>${t("roles")[k]}</button>`).join("")}
     </div>
     <p class="err" id="r-err"></p>
-    <button class="btn" type="submit">${t("start")}</button>
+    <button class="btn" type="submit" id="r-btn">${t("start")}</button>
   </form>`;
 }
 function vHome(){
@@ -520,6 +552,30 @@ function vActs(){
     <div class="stat"><span>${t("myPts")}</span><b>${S.points}</b></div>
   </div>${nav()}`;
 }
+function agoText(sec){if(sec==null)return "";if(sec<300)return t("online");const m=Math.round(sec/60);if(m<60)return `${t("seen")} ${m} ${t("mins")}`;const h=Math.round(m/60);if(h<48)return `${t("seen")} ${h} ${t("hrs")}`;return `${t("seen")} ${Math.round(h/24)} ${t("days")}`}
+function memberPic(m){return m.photo?`<img src="${esc(m.photo)}" alt="">`:avatar(AV_KINDS.includes(m.avatar)?m.avatar:"son")}
+function membersHTML(){
+  const u=S.user;
+  if(!hasServer()||!S.token){
+    return `<div class="members"><div class="member on"><div class="ring">${userPic(u)}</div><span class="dot"></span><span>${esc(u.name)} (${t("you")})</span></div></div><p class="sub">${hasServer()?t("needAccount"):t("localOnly")}</p>`;
+  }
+  if(!S.members)return `<p class="thinking">${t("loadingFam")}</p>`;
+  const list=S.members.slice().sort((a,b)=>(b.isYou-a.isYou)||((a.secondsAgo??1e12)-(b.secondsAgo??1e12)));
+  return `<div class="members">${list.map(m=>{const on=m.isYou||(m.secondsAgo!=null&&m.secondsAgo<300);return `<div class="member ${on?"on":"off"}"><div class="ring">${memberPic(m)}</div>${on?`<span class="dot"></span>`:""}<span>${esc(m.name)}${m.isYou?` (${t("you")})`:""}</span><small>${m.isYou?t("online"):agoText(m.secondsAgo)}</small></div>`}).join("")}</div>${list.length<2?`<p class="sub">${t("shareHint")}</p>`:""}`;
+}
+async function refreshFamily(){
+  if(!hasServer()||!S.token||!S.user)return;
+  try{
+    const d=await api("family",{token:S.token,points:S.points});
+    S.members=d.members;S.familyPoints=d.familyPoints;
+    if(d.user)S.user=Object.assign({},S.user,{mode:d.user.mode,code:d.user.code});
+    save();
+    const box=$("#famMembers"),pts=$("#famPts");
+    if(screen==="family"&&box){box.innerHTML=membersHTML();if(pts)pts.textContent=S.familyPoints}
+  }catch(e){
+    if(e.code==="signed_out"){S.user=null;S.token=null;S.members=null;save();toast(t("signedOut"));go("login")}
+  }
+}
 function vFamily(){
   const u=S.user;
   if(u.mode==="individual_path"){
@@ -533,8 +589,8 @@ function vFamily(){
       <div class="digits">${u.code.split("").map(d=>`<span>${d}</span>`).join("")}</div>
       <button class="copy" data-act="sharecode">${I.copy} ${t("share")}</button></div></div>
     <div><h3 class="sec-t" style="margin-bottom:8px">${t("members")}</h3>
-      <div class="members"><div class="member"><div class="ring">${userPic(u)}</div><span>${esc(u.name)} (${t("you")})</span></div></div></div>
-    <div class="stat"><span>${t("famPts")}</span><b>${S.familyPoints}</b></div>
+      <div id="famMembers">${membersHTML()}</div></div>
+    <div class="stat"><span>${t("famPts")}</span><b id="famPts">${S.familyPoints}</b></div>
     <div class="card"><h3 class="sec-t">📈 ${t("report")}</h3><p class="body" id="report">${rep?esc(rep):`<span class="thinking">${t("reportLoading")}</span>`}</p></div>
     <p class="quote">${t("famQuote")}</p>
   </div>${nav()}`;
@@ -551,7 +607,7 @@ function vMe(){
 
 function render(){
   applyLang();
-  const views={splash:vSplash,login:vLogin,register:vRegister,home:vHome,consult:vConsult,acts:vActs,family:vFamily,me:vMe};
+  const views={splash:vSplash,login:vLogin,signin:vSignin,register:vRegister,home:vHome,consult:vConsult,acts:vActs,family:vFamily,me:vMe};
   app.innerHTML=`<div class="screen">${views[screen]()}</div>`+(sheetHTML?`<div class="sheet-back" data-act="sheet-close"><div class="sheet" role="dialog" aria-modal="true">${sheetHTML}</div></div>`:"");
   after();
 }
@@ -667,7 +723,7 @@ async function ensureReport(){
 function after(){
   if(screen==="register"){
     const bind=(id,k)=>{const el=$("#"+id);el&&el.addEventListener("input",()=>reg[k]=el.value)};
-    bind("r-name","name");bind("r-age","age");bind("r-role","role");bind("r-pass","pass");bind("r-pass2","pass2");
+    bind("r-name","name");bind("r-user","username");bind("r-age","age");bind("r-role","role");bind("r-pass","pass");bind("r-pass2","pass2");
     reg.code.forEach((_,i)=>{const el=$("#code-"+i);if(!el)return;
       el.addEventListener("input",()=>{el.value=el.value.replace(/\D/g,"").slice(-1);reg.code[i]=el.value;if(el.value&&i<5)$("#code-"+(i+1)).focus()});
       el.addEventListener("keydown",e=>{if(e.key==="Backspace"&&!el.value&&i>0)$("#code-"+(i-1)).focus()});
@@ -676,17 +732,52 @@ function after(){
     $("#regForm").addEventListener("submit",e=>{e.preventDefault();
       const err=$("#r-err");
       if(!reg.name.trim()){err.textContent=t("eName");return}
+      const uname=reg.username.trim().toLowerCase();
+      if(!/^[a-z0-9_.]{3,20}$/.test(uname)){err.textContent=t("eUser");return}
       if(reg.pass.length<4){err.textContent=t("ePass");return}
       if(regMode!=="family_code"&&reg.pass!==reg.pass2){err.textContent=t("eMatch");return}
       if(regMode==="family_code"&&reg.code.join("").length!==6){err.textContent=t("eCode");return}
-      const code=regMode==="family_code"?reg.code.join(""):regMode==="family_space"?String(Math.floor(100000+Math.random()*900000)):"";
-      S.user={name:reg.name.trim(),age:reg.age,role:reg.role.trim()||(reg.avatar?T[S.lang].roles[reg.avatar]:""),avatar:reg.avatar||"son",photo:reg.photo,mode:regMode,code};
-      if(!S.points){S.points=10;S.familyPoints=10}
-      save();go("home");
+      const profile={name:reg.name.trim(),age:reg.age,role:reg.role.trim()||(reg.avatar?T[S.lang].roles[reg.avatar]:""),avatar:reg.avatar||"son",photo:reg.photo,mode:regMode};
+      const btn=$("#r-btn");btn.disabled=true;err.textContent="";
+      (async()=>{
+        try{
+          if(hasServer()){
+            const d=await api("register",{username:uname,password:reg.pass,...profile,code:reg.code.join(""),points:10});
+            S.token=d.token;S.user=d.user;S.points=d.user.points;S.familyPoints=d.user.points;S.members=null;
+          }else{
+            if(S.accounts[uname])throw{code:"username_taken"};
+            const code=regMode==="family_code"?reg.code.join(""):regMode==="family_space"?String(Math.floor(100000+Math.random()*900000)):"";
+            S.user={...profile,username:uname,code};S.points=10;S.familyPoints=10;S.done={};S.wisdomDay=null;
+            S.accounts[uname]={pass:await sha(uname+":"+reg.pass),user:S.user,points:10};
+          }
+          save();go("home");refreshFamily();
+        }catch(e){err.textContent=errText(e);btn.disabled=false}
+      })();
+    });
+  }
+  if(screen==="signin"){
+    const u=$("#s-user"),p=$("#s-pass");u.addEventListener("input",()=>sign.username=u.value);p.addEventListener("input",()=>sign.pass=p.value);
+    $("#signForm").addEventListener("submit",e=>{e.preventDefault();
+      const err=$("#s-err"),btn=$("#s-btn");const uname=sign.username.trim().toLowerCase();
+      if(!uname||!sign.pass){err.textContent=t("eWrong");return}
+      btn.disabled=true;err.textContent="";
+      (async()=>{
+        try{
+          if(hasServer()){
+            const d=await api("login",{username:uname,password:sign.pass});
+            S.token=d.token;S.user=d.user;S.points=d.user.points;S.members=d.members||null;S.familyPoints=d.familyPoints??d.user.points;
+          }else{
+            const a=S.accounts[uname];
+            if(!a||a.pass!==await sha(uname+":"+sign.pass))throw{code:"wrong_login"};
+            S.user=a.user;S.points=a.points||0;S.familyPoints=S.points;
+          }
+          sign={username:"",pass:""};save();go("home");
+        }catch(e){err.textContent=errText(e);btn.disabled=false}
+      })();
     });
   }
   if(screen==="consult"){const ta=$("#chatIn");ta?.addEventListener("keydown",e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();sendChat()}});ta?.addEventListener("input",()=>{ta.style.height="auto";ta.style.height=ta.scrollHeight+"px"})}
-  if(screen==="family")ensureReport();
+  if(screen==="family"){ensureReport();refreshFamily()}
 }
 app.addEventListener("click",e=>{
   const el=e.target.closest("[data-act],[data-go],[data-reg],[data-av],[data-faq],[data-tab],[data-play],[data-ch],[data-opt],[data-copy],[data-chat]");
@@ -694,7 +785,7 @@ app.addEventListener("click",e=>{
   const d=el.dataset;
   if(d.act==="sheet-close"&&e.target!==el)return; // clicks inside the sheet
   if(d.go){if(!S.user)return;go(d.go);return}
-  if(d.reg){regMode=d.reg;reg={name:S.user?.name||"",age:S.user?.age||"",role:S.user?.role||"",pass:"",pass2:"",code:["","","","","",""],avatar:S.user?.avatar||null,photo:S.user?.photo||null};go("register");return}
+  if(d.reg){regMode=d.reg;reg={username:"",name:S.user?.name||"",age:S.user?.age||"",role:S.user?.role||"",pass:"",pass2:"",code:["","","","","",""],avatar:S.user?.avatar||null,photo:S.user?.photo||null};go("register");return}
   if(d.av){reg.avatar=d.av;reg.photo=null;if(!reg.role||Object.values(T.ar.roles).concat(Object.values(T.en.roles)).includes(reg.role))reg.role=t("roles")[d.av];render();return}
   if(d.faq!==undefined){openFaq=openFaq===+d.faq?null:+d.faq;render();return}
   if(d.tab){actTab=d.tab;render();return}
@@ -708,7 +799,11 @@ app.addEventListener("click",e=>{
     case "menu":menuOpen=!menuOpen;render();break;
     case "menu-close":menuOpen=false;render();break;
     case "lang":S.lang=S.lang==="ar"?"en":"ar";menuOpen=false;save();render();break;
-    case "logout":S.user=null;chatId=null;menuOpen=false;save();go("login");break;
+    case "logout":
+      if(S.token)api("logout",{token:S.token}).catch(()=>{});
+      if(!hasServer()&&S.user?.username&&S.accounts[S.user.username])Object.assign(S.accounts[S.user.username],{user:S.user,points:S.points});
+      S.user=null;S.token=null;S.members=null;chatId=null;menuOpen=false;save();go("login");break;
+    case "toSignin":go("signin");break;
     case "history":menuOpen=false;openHistory();break;
     case "back":go("login");break;
     case "sug":sugOpen=!sugOpen;render();break;
@@ -720,13 +815,33 @@ app.addEventListener("click",e=>{
     case "wEval":evalWisdom();break;
     case "chDo":S.done[doneKey(d.id)]=true;addPoints(10);openChallenge(d.id);break;
     case "sharecode":copyText((S.lang==="ar"?"انضم لعائلتي في تطبيق أُلفة بهذا الكود: ":"Join my family on the Olfa app with this code: ")+S.user.code);break;
-    case "toFam":case "toJoin":regMode=d.act==="toFam"?"family_space":"family_code";reg={name:S.user.name,age:S.user.age,role:S.user.role,pass:"",pass2:"",code:["","","","","",""],avatar:S.user.avatar,photo:S.user.photo};go("register");break;
+    case "toFam":openSheet(`${sheetHead(t("makeFam"))}<p class="body">${t("makeFamQ")}</p><p class="err" id="f-err"></p><button class="btn rose" data-act="famCreate" id="f-btn">${t("create")}</button>`);break;
+    case "toJoin":openSheet(`${sheetHead(t("joinFam"))}<input class="field" id="j-code" inputmode="numeric" maxlength="6" dir="ltr" placeholder="${t("codeLabel")}" style="text-align:center;font-size:22px;letter-spacing:.3em"><p class="err" id="f-err"></p><button class="btn rose" data-act="famJoin" id="f-btn">${t("joinBtn")}</button>`);break;
+    case "famCreate":case "famJoin":setFamily(d.act==="famCreate");break;
   }
 });
+
+async function setFamily(create){
+  const err=$("#f-err"),btn=$("#f-btn");const code=create?"":($("#j-code")?.value||"").replace(/\D/g,"");
+  if(!create&&code.length!==6){err.textContent=t("eCode");return}
+  btn.disabled=true;err.textContent="";
+  try{
+    if(hasServer()&&S.token){
+      const d=await api("setFamily",{token:S.token,mode:create?"family_space":"family_code",code});
+      S.user=Object.assign({},S.user,{mode:d.user.mode,code:d.user.code});S.members=d.members;S.familyPoints=d.familyPoints;
+    }else{
+      S.user=Object.assign({},S.user,{mode:create?"family_space":"family_code",code:create?String(Math.floor(100000+Math.random()*900000)):code});
+    }
+    save();closeSheet();toast(create?t("famCreated"):t("joined"));
+  }catch(e){err.textContent=errText(e);btn.disabled=false}
+}
+setInterval(()=>{if(document.visibilityState==="visible"&&S.token){if(screen==="family"||Date.now()-(window.__lastPing||0)>170000){window.__lastPing=Date.now();refreshFamily()}}},60000);
+document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible"&&S.token)refreshFamily()});
 
 /* ---------- boot ---------- */
 render();
 refreshAi();
+if(S.token)refreshFamily();
 const splashTimer=setTimeout(()=>{if(screen==="splash")go(S.user?"home":"login")},8000);
 })();
 </script>
